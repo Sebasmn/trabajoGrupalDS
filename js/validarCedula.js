@@ -32,10 +32,10 @@ function validar(){
            var resultado = decimalSiguiente - total;
            if(resultado == cadena[cadena.length-1]     ){
     
-            document.getElementById("validez").innerText= "Validado: "+
-            resultado + " = "+cadena[cadena.length-1] ;
+          //  document.getElementById("validez").innerText= "Validado: "+
+            //resultado + " = "+cadena[cadena.length-1] ;
             alert("CORRECTO");
-            document.getElementById("formulario").submit();
+           // document.getElementById("formulario").submit();
           
             return true;
            }
