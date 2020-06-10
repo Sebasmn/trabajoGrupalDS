@@ -14,5 +14,3 @@ try {
   
   $conn = null;
   ?>
-
-?>
