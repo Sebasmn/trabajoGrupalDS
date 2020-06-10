@@ -1,4 +1,4 @@
-var cedula = prompt('Ingrese su cedula: ');
+var cedula = document.getElementById("cedula").value;
 var arraycedula = cedula.split("");
 var ndigitos = arraycedula.slice(0,9);
 var digitos = [2,1,2,1,2,1,2,1,2];
@@ -18,7 +18,7 @@ for (i= 0; i < ndigitos.length; i++) {
 valaprox = redondear(total);
 numcom = valaprox - total;
 if(numcom == arraycedula[9]) {
-    alert("Su cédula es válida!");
+    continue;
 } else {
     alert("Digite una cédula correcta...");
 }
