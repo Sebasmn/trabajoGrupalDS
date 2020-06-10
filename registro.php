@@ -1,11 +1,10 @@
 <?php
 require 'conexion.php'; 
 try {
-  
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO usuarios (nombre, apellido, clave)
-    VALUES ('John', 'Doe', 'john@example.com')";
+    $sql = "INSERT INTO usuarios (NOMBRE, APELLIDO, CEDULA, TELEFONO, DIRECCION, CLAVE)
+    VALUES ($_GET['nom'], $_GET['ape'], $_GET['ced'], $_GET['tel'], $_GET['dir'], $_GET['con'])";
     // use exec() because no results are returned
     $conn->exec($sql);
     echo "New record created successfully";
