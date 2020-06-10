@@ -13,7 +13,7 @@
         $message = "Ingresando";
         echo "<script type='text/javascript'>alert('$message');</script>";
         $records = $conn->prepare('SELECT * FROM usuarios WHERE NOMBRE=:usuario');
-        $records->bindParam(':NOMBRE', $_POST['usuario']);
+        $records->bindParam(':usuario', $_POST['usuario']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
