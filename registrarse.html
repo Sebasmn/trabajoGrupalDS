@@ -9,7 +9,7 @@
 <body>
     <div class="registro">
         <h1>Registro de usuario</h1>
-        <form id=formulario action="registro.php" method="post">
+        <form id=formulario action="registro.php" method="post" onsubmit="return validar()">
             <input type="text" name="nombre" placeholder="Nombre" required="required" />
             <input type="text" name="apellido" placeholder="Apellido" required="required" />
             <input type="password" name="clave" placeholder="Contraseña" required="required" />
@@ -18,7 +18,7 @@
             <input type="text" name="direccion" placeholder="Dirección" required="required" />
             <input type="text" name="telefono" placeholder="Teléfono" required="required" />
             <button 
-            onclick="validar()"
+            type = submit
             class="btn btn-primary btn-block btn-large">Aceptar</button>
             <button
          

@@ -22,9 +22,11 @@ function validar(){
     if(numcom == arraycedula[9]) {
        // document.getElementById("formulario").submit();
        alert("Correctaa...");
+       return true;
 
     } else {
         alert("Digite una cédula correcta...");
+        return false;
     }
     document.write(valaprox);
 }
