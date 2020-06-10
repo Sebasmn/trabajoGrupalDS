@@ -21,6 +21,10 @@
         if (count($results) > 0 && $_POST['clave'] = $results['CLAVE']) {
             
             $_SESSION['user_id'] = $results['usuario'];
+            echo'<script type="text/javascript">
+            alert("  SESION iniciada");
+         
+            </script>';
             header('Location:  comprar.html');
            // $message2 = "Bienvenido";
         } else {
