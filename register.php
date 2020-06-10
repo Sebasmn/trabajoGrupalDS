@@ -2,7 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+<?php 
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    # code...
+    header('Location: /index.html');
+}
+
+?>
     <meta charset="UTF-8">
     <title>Inicio Sesión</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
