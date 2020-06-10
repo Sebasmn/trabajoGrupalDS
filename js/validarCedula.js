@@ -1,6 +1,7 @@
 
 function validar(){
     var cedula = document.getElementById("cedula").value;
+    alert(cedula);
     var arraycedula = cedula.split("");
     var ndigitos = arraycedula.slice(0,9);
     var digitos = [2,1,2,1,2,1,2,1,2];
