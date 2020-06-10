@@ -1,18 +1,19 @@
 <?php
-require 'conexion.php'; 
-try {
-    $sql = "INSERT INTO usuarios (NOMBRE, APELLIDO, CEDULA, TELEFONO, DIRECCION, CLAVE)
-    VALUES ('$_GET['nom']', '$_GET['ape']', '$_GET['ced']', '$_GET['tel']', '$_GET['dir']', '$_GET['con']')";
-    // use exec() because no results are returned
-    if (mysqli_query($conn, $sql)) {
-      echo "Grabado exitoso";
-    } else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-    mysqli_close($conn);
-} catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+ require 'conexion.php';
+// Check connection
+if (mysqli_connect_errno())
+{
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-  
-  $conn = null;
+$sql = "INSERT INTO usuarios (NOMBRE, APELLIDO, CEDULA, TELEFONO, DIRECCION, CLAVE)
+VALUES('$_POST['nom']',' $_POST['ape']','$_POST['ced']','$_POST['tel']','$_POST['dir']','$_POST['con']')";
+if (!mysqli_query($conn,$sql))
+{
+die('Error: ' . mysqli_error($con));
+}
+echo "Thank you.";
+
+mysqli_close($con);
+
+require 'conexion.php';
   ?>
