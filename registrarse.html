@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Inicio Sesión</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script src="validarCedula.js"></script>
+    <script src="js/validarCedula.js"></script>
 </head>
 <body>
     <div class="registro">
         <h1>Registro de usuario</h1>
-        <form id=formulario  action="registro.php" method="post" onsubmit="return myFunction()">
+        <form id=formulario  action="registro.php" method="post" onsubmit="return validar()">
             <input type="text" name="nombre" placeholder="Nombre" required="required" />
             <input type="text" name="apellido" placeholder="Apellido" required="required" />
             <input type="password" name="clave" placeholder="Contraseña" required="required" />
@@ -26,14 +26,5 @@
         </form>
     </div>
 </body>
-<script>
-    function myFunction(){
-//do something here
-alert("hola");
-//if you want to submit form
-  return true;
-//if don't want to submit
-  return false;
-  } 
-</script>
+
 </html>

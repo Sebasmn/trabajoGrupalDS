@@ -21,8 +21,9 @@ function validar(){
     valaprox = redondear(total);
     numcom = valaprox - total;
     if(numcom == arraycedula[9]) {
-       // document.getElementById("formulario").submit();
-       alert("Correctaa...");
+        alert("Correctaa...");
+        document.getElementById("formulario").submit();
+      
        return true;
 
     } else {
