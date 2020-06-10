@@ -2,10 +2,12 @@
 
 session_start();
 
-if (isset($_SESSION['user_id'])) :
+
+if (!isset($_SESSION['user_id'])) :
     # code...
+ 
     echo'<script type="text/javascript">
-    alert(" HAY SESION ");
+    alert(" NO HAY SESION ");
  
     </script>';
    
@@ -34,13 +36,14 @@ if (isset($_SESSION['user_id'])) :
     </div>
 </body>
 
-<?php else:  header('Location: /index.html'); 
+<?php else:  
+   header('Location: index.html'); 
      echo'<script type="text/javascript">
-     alert("NO SESION");
+     alert(" SESION EN CURSO");
   
      </script>';
     ?>
-    <h1>COMMPRA MEDICINA</h1>
+    
    
     <?php endif; ?>
 </html>
