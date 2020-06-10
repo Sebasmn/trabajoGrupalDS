@@ -6,10 +6,10 @@
 
 session_start();
 
-if (!isset($_SESSION['user_id'])) :
+if (isset($_SESSION['user_id'])) :
     # code...
     echo'<script type="text/javascript">
-    alert("NO HAY SESION ");
+    alert(" HAY SESION ");
  
     </script>';
    
@@ -44,7 +44,7 @@ if (!isset($_SESSION['user_id'])) :
   
     <?php else:  header('Location: /index.html'); 
      echo'<script type="text/javascript">
-     alert("Sesion siiiiiii Guardada");
+     alert("NO SESION");
   
      </script>';
     ?>
