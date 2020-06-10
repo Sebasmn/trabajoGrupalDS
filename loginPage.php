@@ -1,3 +1,19 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['user_id'])) :
+    # code...
+    echo'<script type="text/javascript">
+    alert(" HAY SESION ");
+ 
+    </script>';
+   
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,4 +33,14 @@
         </form>
     </div>
 </body>
+
+<?php else:  header('Location: /index.html'); 
+     echo'<script type="text/javascript">
+     alert("NO SESION");
+  
+     </script>';
+    ?>
+    <h1>COMMPRA MEDICINA</h1>
+   
+    <?php endif; ?>
 </html>

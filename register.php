@@ -2,17 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php 
 
-session_start();
-
-if (isset($_SESSION['user_id'])) {
-    # code...
-    
-    header('Location: /index.html');
-}
-
-?>
     <meta charset="UTF-8">
     <title>Inicio Sesión</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -37,6 +27,14 @@ if (isset($_SESSION['user_id'])) {
             class="btn btn-primary btn-block btn-large"><a href="login.html">Volver</a></button>
         </form>
     </div>
+
+  
+    
+    
+
+
+
 </body>
+
 
 </html>
