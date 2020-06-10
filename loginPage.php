@@ -5,6 +5,7 @@ session_destroy();
 
 if (isset($_SESSION['user_id'])) :
     # code...
+    header('Location: index.html'); 
     echo'<script type="text/javascript">
     alert(" HAY SESION ");
  
@@ -35,7 +36,7 @@ if (isset($_SESSION['user_id'])) :
     </div>
 </body>
 
-<?php else:  header('Location: index.html'); 
+<?php else:  header('Location: loginPage.php'); 
      echo'<script type="text/javascript">
      alert("NO SESION");
   
