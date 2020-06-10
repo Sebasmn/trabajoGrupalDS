@@ -20,7 +20,8 @@ function validar(){
     valaprox = redondear(total);
     numcom = valaprox - total;
     if(numcom == arraycedula[9]) {
-        continue;
+        document.getElementById("formulario").submit();
+        
     } else {
         alert("Digite una cédula correcta...");
     }
@@ -36,5 +37,5 @@ function redondear(numero){
 }
 
 //NO BORRAR CON ESTO SE ENVIA EL FORMULARIO PONLE DENTRO DEL IF
-document.getElementById("formulario").submit();
+
 //DENTRO DEL ELSE LE PONES UN ALERT O SOMETHING
