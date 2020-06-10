@@ -22,7 +22,7 @@ try {
     // use exec() because no results are returned
     $conn->exec($sql);
     //echo "Ingresado";
-    header('Location:  prueba.html');
+    header('Location:  register.php');
 
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
