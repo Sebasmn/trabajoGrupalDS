@@ -1,7 +1,7 @@
 
 function validar(){
     var cedula = document.getElementById("cedula").value;
-    alert(cedula);
+    //alert(cedula);
     var arraycedula = cedula.split("");
     var ndigitos = arraycedula.slice(0,9);
     var digitos = [2,1,2,1,2,1,2,1,2];
@@ -21,13 +21,15 @@ function validar(){
     valaprox = redondear(total);
     numcom = valaprox - total;
     if(numcom == arraycedula[9]) {
-        alert("Correctaa...");
+        //alert("Correctaa...");
         document.getElementById("formulario").submit();
       
        return true;
 
     } else {
         alert("Digite una cédula correcta...");
+        document.getElementById("cedula").value="";
+        document.getElementById("cedula").focus();
         return false;
     }
     document.write(valaprox);
