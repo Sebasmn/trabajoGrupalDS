@@ -8,6 +8,7 @@ session_start();
 
 if (isset($_SESSION['user_id'])) {
     # code...
+    
     header('Location: /index.html');
 }
 
