@@ -42,7 +42,12 @@ if (!isset($_SESSION['user_id'])) :
     </div>
 
   
-    <?php else:  header('Location: /index.html'); ?>
+    <?php else:  header('Location: /index.html'); 
+     echo'<script type="text/javascript">
+     alert("Sesion NOOOO Guardada");
+  
+     </script>';
+    ?>
     <h1>COMMPRA MEDICINA</h1>
    
     <?php endif; ?>
