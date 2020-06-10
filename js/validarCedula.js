@@ -1,7 +1,7 @@
 
 function validar(){
-    //var cedula = prompt("Ingrese su cedula");
-    var cedula = document.getElementById("cedula").value;
+    var cedula = prompt("Ingrese su cedula");
+   // var cedula = document.getElementById("cedula").value;
     //document.getElementById("cedula").innerText="Cedula: "+ cedula;
     var cadena= cedula.split("");
     var provincia =  cedula[0].toString() +  cedula[1].toString();
