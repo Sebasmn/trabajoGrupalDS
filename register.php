@@ -2,20 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php 
 
-session_start();
-
-if (isset($_SESSION['user_id'])) :
-    # code...
-    echo'<script type="text/javascript">
-    alert(" HAY SESION ");
- 
-    </script>';
-   
-
-
-?>
     <meta charset="UTF-8">
     <title>Inicio Sesión</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -42,15 +29,7 @@ if (isset($_SESSION['user_id'])) :
     </div>
 
   
-    <?php else:  header('Location: /index.html'); 
-     echo'<script type="text/javascript">
-     alert("NO SESION");
-  
-     </script>';
-    ?>
-    <h1>COMMPRA MEDICINA</h1>
-   
-    <?php endif; ?>
+    
     
 
 

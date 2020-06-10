@@ -3,7 +3,7 @@
     session_start();
 
     if (isset($_SESSION['user_id'])) {
-        header('Location: index.html');
+        header('Location:  comprar.html');
    
     }
 
@@ -21,7 +21,7 @@
         if (count($results) > 0 && $_POST['clave'] = $results['CLAVE']) {
             
             $_SESSION['user_id'] = $results['usuario'];
-            header('Location:  register.php');
+            header('Location:  comprar.html');
            // $message2 = "Bienvenido";
         } else {
             $message = 'Error al ingresar la cedula o la contraseña';
