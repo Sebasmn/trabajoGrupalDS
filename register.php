@@ -6,11 +6,11 @@
 
 session_start();
 
-if (isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'])) :
     # code...
-    
-    header('Location: /index.html');
-}
+
+   
+
 
 ?>
     <meta charset="UTF-8">
@@ -37,6 +37,17 @@ if (isset($_SESSION['user_id'])) {
             class="btn btn-primary btn-block btn-large"><a href="login.html">Volver</a></button>
         </form>
     </div>
+
+  
+    <?php else:  header('Location: /index.html'); ?>
+    <h1>COMMPRA MEDICINA</h1>
+   
+    <?php endif; ?>
+    
+
+
+
 </body>
+
 
 </html>
