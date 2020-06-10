@@ -9,7 +9,7 @@
 <body>
     <div class="registro">
         <h1>Registro de usuario</h1>
-        <form id=formulario  method="post" onsubmit="return validar()">
+        <form id=formulario  method="post" onsubmit="return myFunction()">
             <input type="text" name="nombre" placeholder="Nombre" required="required" />
             <input type="text" name="apellido" placeholder="Apellido" required="required" />
             <input type="password" name="clave" placeholder="Contraseña" required="required" />
@@ -26,4 +26,14 @@
         </form>
     </div>
 </body>
+<script>
+    function myFunction(){
+//do something here
+alert("hola");
+//if you want to submit form
+  return true;
+//if don't want to submit
+  return false;
+  } 
+</script>
 </html>
