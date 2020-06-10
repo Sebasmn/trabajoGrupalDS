@@ -3,9 +3,9 @@
 session_start();
 
 
-if (isset($_SESSION['user_id'])) :
+if (!isset($_SESSION['user_id'])) :
     # code...
-    header('Location: index.html'); 
+ 
     echo'<script type="text/javascript">
     alert(" HAY SESION ");
  
@@ -37,12 +37,13 @@ if (isset($_SESSION['user_id'])) :
 </body>
 
 <?php else:  
+   header('Location: index.html'); 
      echo'<script type="text/javascript">
      alert("NO SESION");
   
      </script>';
     ?>
-    <h1>COMMPRA MEDICINA</h1>
+    
    
     <?php endif; ?>
 </html>
