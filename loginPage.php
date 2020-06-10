@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) :
     # code...
  
     echo'<script type="text/javascript">
-    alert(" HAY SESION ");
+    alert(" NO HAY SESION ");
  
     </script>';
    
@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_id'])) :
 <?php else:  
    header('Location: index.html'); 
      echo'<script type="text/javascript">
-     alert("NO SESION");
+     alert(" SESION EN CURSO");
   
      </script>';
     ?>
