@@ -34,3 +34,7 @@ function redondear(numero){
         return (parseInt(numero/10) * 10) + 10;
     }
 }
+
+//NO BORRAR CON ESTO SE ENVIA EL FORMULARIO PONLE DENTRO DEL IF
+document.getElementById("formulario").submit();
+//DENTRO DEL ELSE LE PONES UN ALERT O SOMETHING
