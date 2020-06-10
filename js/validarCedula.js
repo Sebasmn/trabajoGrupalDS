@@ -1,48 +1,54 @@
 
 function validar(){
+    //var cedula = prompt("Ingrese su cedula");
     var cedula = document.getElementById("cedula").value;
-    //alert(cedula);
-    var arraycedula = cedula.split("");
-    var ndigitos = arraycedula.slice(0,9);
-    var digitos = [2,1,2,1,2,1,2,1,2];
-    var aux = [];
-    var num = 0; var total = 0; var valaprox = 0; var numcom = 0;
-    for (i= 0; i < ndigitos.length; i++) {
-        num = ndigitos[i] * digitos[i];
-        if(num >= 10) {
-            num = num - 9;
-            aux.push(num);
-            total += aux[i];
-            continue;
-        }
-        aux.push(num);
-        total += aux[i];
-    }
-    valaprox = redondear(total);
-    numcom = valaprox - total;
-    if(numcom == arraycedula[9]) {
-        //alert("Correctaa...");
-        document.getElementById("formulario").submit();
-      
-       return true;
-
-    } else {
-        alert("Digite una cédula correcta...");
+    //document.getElementById("cedula").innerText="Cedula: "+ cedula;
+    var cadena= cedula.split("");
+    var provincia =  cedula[0].toString() +  cedula[1].toString();
+    var n = parseInt(provincia);
+    var total=0;
+    //PRONVICA 
+    if  (   n>=1 && n<=24    ){
+        //VALIDO
+        for(var i=0;i<=8;i++){
+            var aux=0;
+            if((i+1)%2==0){
+               aux= cadena[i]*1;
+            }else{
+                aux=cadena[i]*2;
+                if(aux>=10){
+                    aux=aux-9;
+                }
+            }
+            total=total+aux;
+            }
+            var final = (total.toString()).split("");
+           var digito= final[final.length-1];
+          var  sumador = 10-(parseInt(digito));
+           var decimalSiguiente=sumador+total;
+           if(sumador==10){
+            decimalSiguiente=total;
+            }
+           var resultado = decimalSiguiente - total;
+           if(resultado == cadena[cadena.length-1]     ){
+    
+            document.getElementById("validez").innerText= "Validado: "+
+            resultado + " = "+cadena[cadena.length-1] ;
+    
+            //document.getElementById("formulario").submit();
+          
+            return true;
+           }
+    }else{
+    
+        //document.getElementById("validez").innerText="No valido";
+        alert("Digite una cédula correcta.");
         document.getElementById("cedula").value="";
         document.getElementById("cedula").focus();
         return false;
     }
-    document.write(valaprox);
-}
-
-function redondear(numero){
-    if(numero%10 == 0){
-        return numero;
-    }else {
-        return (parseInt(numero/10) * 10) + 10;
+    
     }
-}
-
-//NO BORRAR CON ESTO SE ENVIA EL FORMULARIO PONLE DENTRO DEL IF
-
-//DENTRO DEL ELSE LE PONES UN ALERT O SOMETHING
+    
+    
+    
