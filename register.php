@@ -44,7 +44,7 @@ if (!isset($_SESSION['user_id'])) :
   
     <?php else:  header('Location: /index.html'); 
      echo'<script type="text/javascript">
-     alert("Sesion NOOOO Guardada");
+     alert("Sesion siiiiiii Guardada");
   
      </script>';
     ?>
