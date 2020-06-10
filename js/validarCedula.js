@@ -30,7 +30,7 @@ function validar(){
             decimalSiguiente=total;
             }
            var resultado = decimalSiguiente - total;
-           if(resultado == cadena[cadena.length-1]     ){
+           if(resultado == cadena[cadena.length-1]  && cadena.length == 10   ){
     
             document.getElementById("validez").innerText= "Validado: "+
             resultado + " = "+cadena[cadena.length-1] ;
