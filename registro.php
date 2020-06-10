@@ -21,9 +21,12 @@ try {
     VALUES ('John', 'Doe', 'john@example.com')";*/
     // use exec() because no results are returned
     $conn->exec($sql);
-    echo "Ingresado";
+    //echo "Ingresado";
+    header('Location:  prueba.html');
+
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
+  //  header('Location:  prueba.html');
   }
   
   $conn = null;
