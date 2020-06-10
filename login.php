@@ -13,19 +13,18 @@
         $message = "Ingresando";
         echo "<script type='text/javascript'>alert('$message');</script>";
         $records = $conn->prepare('SELECT * FROM usuarios WHERE NOMBRE=:usuario');
-        $records->bindParam(':usuario', $_POST['usuario']);
+        $records->bindParam(':NOMBRE', $_POST['usuario']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
         $message = '';
         if (count($results) > 0 && $_POST['clave'] = $results['CLAVE']) {
             
-            $_SESSION['user_id'] = $results['usuario'];
+            $_SESSION['user_id'] = $results['NOMBRE'];
             echo'<script type="text/javascript">
             alert("  SESION iniciada");
-         
             </script>';
-            header('Location:  comprar.html');
+          //  header('Location:  comprar.html');
            // $message2 = "Bienvenido";
         } else {
             $message = 'Error al ingresar la cedula o la contraseña';
