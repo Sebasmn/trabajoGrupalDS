@@ -35,7 +35,7 @@ function validar(){
             document.getElementById("validez").innerText= "Validado: "+
             resultado + " = "+cadena[cadena.length-1] ;
             alert("CORRECTO");
-            //document.getElementById("formulario").submit();
+            document.getElementById("formulario").submit();
           
             return true;
            }
