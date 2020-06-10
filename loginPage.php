@@ -36,7 +36,7 @@ if (isset($_SESSION['user_id'])) :
     </div>
 </body>
 
-<?php else:  header('Location: loginPage.php'); 
+<?php else:  
      echo'<script type="text/javascript">
      alert("NO SESION");
   
