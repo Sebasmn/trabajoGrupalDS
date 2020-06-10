@@ -8,7 +8,10 @@ session_start();
 
 if (!isset($_SESSION['user_id'])) :
     # code...
-
+    echo'<script type="text/javascript">
+    alert("Sesion Guardada");
+ 
+    </script>';
    
 
 
