@@ -10423,7 +10423,7 @@ input {
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
-.registro { 
+/*.registro { 
 	position: absolute;
 	top: 30%;
 	left: 50%;
@@ -10435,12 +10435,25 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
   color: #fff; 
   text-shadow: 0 0 10px rgba(0,0,0,0.3); 
   letter-spacing:1px; text-align:center; 
-}
+}*/
 .derecha {
-  float: right; 
-  width: 50%; 
+  flex: 1;
+  margin-top: 20px;
 }
 .izquierda {
-  float: left; 
-  width: 50%;
+flex: 1;
+left: 10px;
 }
+.registro{
+  display: flex;
+  width: 100%;
+}
+.centro1, .inicio1, .final1{
+  width: 10%;
+}
+/*.inicio1{
+  width: 10%;
+}
+.final1{
+  width: 10%;
+}*/
