@@ -25,7 +25,7 @@
             echo "<script type='text/javascript'>alert('$usuario');</script>";
 
            
-          //  header('Location:  comprar.html');
+          header('Location:  comprar.html');
            // $message2 = "Bienvenido";
         } else {
             $message = 'Error al ingresar la cedula o la contraseña';
