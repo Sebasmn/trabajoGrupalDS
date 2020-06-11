@@ -156,6 +156,6 @@ a{color:inherit;text-decoration:none}
 	text-align:center;
 }
 
-#tab-1{
-	margin-left: 600px;
+.login-form .sign-in{
+	color: aqua;
 }
