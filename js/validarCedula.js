@@ -52,7 +52,7 @@ function validar(){
     }
 
     //MOSTRAR MAPA
-      function mostrarMapa(){
+ function mostrarMapa(){
 
         
 let myMap = L.map('myMap').setView([51.505, -0.09], 13)
