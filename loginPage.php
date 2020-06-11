@@ -39,11 +39,6 @@ if (!isset($_SESSION['user_id'])) :
 <?php else:  
 
 
-     echo'<script type="text/javascript">
-    
-     alert(" SESION EN CURSO");
-     </script>';
-
      header('Location: index.php'); 
     ?>
     
