@@ -12,6 +12,7 @@ a{color:inherit;text-decoration:none}
 .login-wrap{
 	width:100%;
 	margin:auto;
+	margin-left: 600px;
 	max-width:1525px;
 	min-height:970px;
 	position:relative;
@@ -60,7 +61,7 @@ a{color:inherit;text-decoration:none}
 	border-color:#1161ee;
 }
 .login-form{
-	margin-left: 600px;;
+	margin-left: 600px;
 	min-height:345px;
 	position:relative;
 	perspective:1000px;
