@@ -13,7 +13,7 @@ a{color:inherit;text-decoration:none}
 	width:100%;
 	margin:auto;
 	
-	margin-left: 600px;
+
 	max-width:1525px;
 	min-height:970px;
 	position:relative;
@@ -21,7 +21,7 @@ a{color:inherit;text-decoration:none}
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
-	margin-left: 600px;
+	
 	width:100%;
 	height:100%;
 	position:absolute;
@@ -74,6 +74,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-form .group{
 	margin-bottom:15px;
+	margin-left: 600px;
 }
 .login-form .group .label,
 .login-form .group .input,
