@@ -155,3 +155,7 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+
+#tab-1,#tab2{
+	margin-left: 600px;
+}
