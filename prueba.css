@@ -71,7 +71,7 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-in:default + .tab,
 .login-html .sign-up:default + .tab{
 
-	margin-left: 420px;
+	margin-left: 428px;
 }
 
 
@@ -87,7 +87,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-form .group{
 	margin-bottom:20px;
-	margin-left: 420px;
+	margin-left: 428px;
 }
 .login-form .group .label,
 .login-form .group .input,
