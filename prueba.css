@@ -12,7 +12,7 @@ a{color:inherit;text-decoration:none}
 .login-wrap{
 	width:100%;
 	/*margin:auto;*/
-	
+	float: left;
 	max-width:1525px;
 	min-height:970px;
 	position:relative;
@@ -21,7 +21,7 @@ a{color:inherit;text-decoration:none}
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
-	
+	float: left;
 	width:100%;
 	height:100%;
 	position:absolute;
@@ -174,3 +174,10 @@ a{color:inherit;text-decoration:none}
 	text-align:center;
 }
 
+
+#myMap{
+	float: left;
+	width: 200px;
+	height: 200px;
+	border-color: black;
+}

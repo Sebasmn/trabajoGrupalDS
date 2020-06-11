@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="prueba.css">
+    <script src="js/validarCedula.js"></script>
 </head>
 <body>
     <div class="login-wrap">
@@ -48,8 +49,12 @@
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Email </label>
-                        <input id="pass" type="text" class="input">
+                        <input id="pass" type="text" class="input"
+                        onfocus="mostrarMapa()"
+                        
+                        >
                     </div>
+             
                     <div class="group">
                         <input type="submit" class="button" value="Registrarse">
                     </div>
@@ -61,5 +66,8 @@
             </div>
         </div>
     </div>
+   
+
+
 </body>
 </html>
