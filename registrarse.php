@@ -13,9 +13,7 @@
 </head>
 <body>
     <br>
-    <div class="wrapper">
-      <div class="clip-text clip-text_two">REGISTRO DE USUARIO</div>
-    </div>
+        <h1>Registro de Usuario</h1>
     <br>    
     <section class="registro">
         <div class="inicio1"></div>
