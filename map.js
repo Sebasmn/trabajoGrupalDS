@@ -1,4 +1,6 @@
 var marker1;
+alert(navigator.geolocation.getCurrentPosition().longitude);
+alert(navigator.geolocation.getCurrentPosition().latitude);
 navigator.geolocation.getCurrentPosition(function(location) {
   var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
 
