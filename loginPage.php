@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_id'])) :
             <input type="text" name="usuario" placeholder="Usuario" required="required" />
             <input type="password" name="clave" placeholder="Contraseña" required="required" />
             <button type="submit" class="btn btn-primary btn-block btn-large">Iniciar Sesión</button>
-            <button type="submit" class="btn btn-primary btn-block btn-large"><a href="registrarse.html">No tienes cuenta? Regístrate</a></button>
+            <button type="submit" class="btn btn-primary btn-block btn-large"><a href="registrarse.php">No tienes cuenta? Regístrate</a></button>
          
         </form>
     </div>
