@@ -13,8 +13,9 @@
 </head>
 <body>
     <br>
-    
-        <h1 style="text-align: center; color: whitesmoke;">Registro de usuario</h1>
+    <div class="wrapper">
+      <div class="clip-text clip-text_two">REGISTRO DE USUARIO</div>
+    </div>
     <br>    
     <section class="registro">
         <div class="inicio1"></div>
