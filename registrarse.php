@@ -32,7 +32,7 @@
               >Enviar Mudo</button>
                 <button
              
-                class="btn btn-primary btn-block btn-large"><a href="login.html">Volver</a></button>
+                class="btn btn-primary btn-block btn-large"><a href="loginPage.php">Volver</a></button>
             </form>
         </div>
         <div class="centro1">

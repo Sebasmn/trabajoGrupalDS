@@ -44,7 +44,7 @@ if (!isset($_SESSION['user_id'])) :
      alert(" SESION EN CURSO");
      </script>';
 
-     header('Location: index.html'); 
+     header('Location: index.php'); 
     ?>
     
    
