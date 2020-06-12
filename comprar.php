@@ -79,7 +79,6 @@ switch($_GET["action"]) {
         <link href="css/styles.css" rel="stylesheet" />
         <link href="style.css" type="text/css" rel="stylesheet" />
     </head>
-        </header>
     <body id="page-top">
         
         <header class="masthead">
@@ -99,6 +98,7 @@ switch($_GET["action"]) {
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>                        
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="comprar.php">Comprar</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contacto</a></li>
+                        <li><a class="btn btn-primary js-scroll-trigger" style="margin:15px" href="#">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -106,10 +106,7 @@ switch($_GET["action"]) {
         <!-- Masthead-->
         <br><br><br>
         <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
+            
                         
 <div id="shopping-cart">
 
@@ -158,14 +155,16 @@ if(isset($_SESSION["cart_item"])){
   <?php
 } else {
 ?>
-<div class="no-records">Tu carrito esta vacio</div>
+<div class="no-records" style="color:white">Tu carrito esta vacio</div>
 <?php 
 }
-?>
-</div>
 
+?>
+<a id="btnEmpty" href="#">Comprar</a>
+</div>
+<br>
 <div id="product-grid">
-	<div class="txt-heading">Medicamentos</div>
+	<div class="txt-heading" style="color:white">Medicamentos</div>
 	<?php
 	$product_array = $db_handle->runQuery("SELECT * FROM productos ORDER BY ID ASC");
 	if (!empty($product_array)) { 
@@ -186,62 +185,7 @@ if(isset($_SESSION["cart_item"])){
 	}
 	?>
 </div>
-                    </div>
-                </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="" />
-            </div>
-        </section>
-        <section class="contact-section bg-black" id="signup">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Establecimiento</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">Universidad Técnica de Ambato</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Integrantes</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50"><a href="mailto:tucorreo@gmail.com">Alexander Conteron</a></div>
-                                <div class="small text-black-50"><a href="mailto:sebasmayorga98@gmail.com">Sebastian Mayorga</a></div>
-                                <div class="small text-black-50"><a href="mailto:francisclquishpe00@gmail.com">Javier Quishpe</a></div>
-                                <div class="small text-black-50"><a href="mailto:rubiragene17@gmail.com">Génesis Rubira</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Celular</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">+593 987975631</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Trabajo Final 2020</div></footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        
     </body>
     <?php else:  
 
