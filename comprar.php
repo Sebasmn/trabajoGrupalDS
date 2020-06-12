@@ -79,7 +79,7 @@ switch($_GET["action"]) {
         <link href="css/styles.css" rel="stylesheet" />
         <link href="style.css" type="text/css" rel="stylesheet" />
     </head>
-    <body id="page-top">
+    <body id="page-top" style="background-color:black">
         
         <header class="masthead">
         <!-- Navigation-->
@@ -108,8 +108,9 @@ switch($_GET["action"]) {
         <!-- About-->
             
                         
-<div id="shopping-cart">
-
+<div id="shopping-cart"> 
+<div class="txt-heading" style="color:white">Carrito de compras</div>
+<br><br>
 <a id="btnEmpty" href="comprar.php?action=empty">Vaciar carrito</a>
 <?php
 if(isset($_SESSION["cart_item"])){
@@ -176,7 +177,7 @@ if(isset($_SESSION["cart_item"])){
 			<div class="product-tile-footer">
 			<div class="product-title"><?php echo $product_array[$key]["NOMBRE"]; ?></div>
 			<div class="product-price"><?php echo "$".$product_array[$key]["PRECIO"]; ?></div>
-			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Agregar" class="btnAddAction" /></div>
 			</div>
 			</form>
 		</div>
@@ -185,7 +186,12 @@ if(isset($_SESSION["cart_item"])){
 	}
 	?>
 </div>
-        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
     <?php else:  
 
@@ -221,4 +227,5 @@ if (isset($_SESSION['user_id'])) :
 
 ?>
 <?php endif; ?>
+
 </html>
