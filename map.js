@@ -25,12 +25,17 @@ function success(pos) {
 }).addTo(mymap);
 
   marker1 = L.marker(latlng).addTo(mymap);
+  var latitud1 = "HOLA";
+  var longitud1 = "HOLA1";
   mymap.on('click', function (e) {
     if (marker1) {
       mymap.removeLayer(marker1);
     }
     let latLng = mymap.mouseEventToLatLng(e.originalEvent);
     marker1 = new L.marker([latLng.lat, latLng.lng],13.5).addTo(mymap);
+    latitud1=latLng.lat;
+    longitud1=latLng.lng;
+    alert(latitud1+' '+longitud1);
   });
 
 
