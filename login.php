@@ -3,7 +3,7 @@
     session_start();
 
     if (isset($_SESSION['user_id'])) {
-        header('Location:  comprar.hp');
+        header('Location:  comprar.php');
    
     }
 
@@ -28,6 +28,7 @@
         } else {
             $message = 'Error al ingresar la cedula o la contraseña';
             echo "<script type='text/javascript'>alert('$message');</script>";
+            header('Location:  loginFinal.php');
         }
     }
     
