@@ -38,28 +38,21 @@ if (!isset($_SESSION['user_id'])) :
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" onclick="mostrar()">Registrarse</label>
             
             <div class="login-form">
-                <div class="sign-in-htm">
-                   
+            <!-- Fromulario LOGIN -->   
+            <div class="sign-in-htm">
+            <form  action=login.php id=formularioLog  method="post" >
                     <div class="group">
-                        <label for="user" class="label">Cedula</label>
-                        <input id="user" type="text" class="input">
+                        <label for="cedula" class="label">Cedula</label>
+                        <input id="cedula" type="text" class="input">
                     </div>
                     <div class="group">
-                        <label for="pass" class="label">Clave de Acceso</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <label for="claveLog" class="label">Clave de Acceso</label>
+                        <input id="claveLog" type="password" class="input" data-type="password">
                     </div>
-
-
-                    
-
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked>
                         <label for="check"><span class="icon"></span> Mantener sesion iniciada</label>
                     </div>
-
-                
-
-
                     <div class="group">
                         <input type="submit" class="button" value="Ingresar">
                     </div>
@@ -67,10 +60,11 @@ if (!isset($_SESSION['user_id'])) :
                     <div class="foot-lnk">
                         <a href="#forgot">No recuerdas tu clave?</a>
                     </div>
+            </form>
+            <!-- Fromulario LOGIN -->   
 
 
-
-
+            <!-- Fromulario REGISTRO -->   
                     <form  action=registro.php id=formulario  method="post" onsubmit="return validar()">
 
                 </div>
