@@ -12,7 +12,7 @@ a{color:inherit;text-decoration:none}
 
 .login-wrap{
 	width:100%;
-	/margin:auto;/
+	/*margin:auto;*/
 	float: left;
 	max-width:1525px;
 	min-height:850px;
@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
 	position:absolute;
 	transform:rotateY(180deg);
 	backface-visibility:hidden;
-	/transition:all .4s linear;/
+	/*transition:all .4s linear;*/
 }
 
 
@@ -69,14 +69,14 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-up:checked + .tab{
 	color:#fff;
 	border-color:#1161ee;
-	/margin-left: 600px;/
+	/*margin-left: 600px;*/
 	
 }
 
 .login-html .sign-in:default + .tab,
 .login-html .sign-up:default + .tab{
 	align-content: center;
-	/margin-left: 463px;/
+	/*margin-left: 463px;*/
 	align-self: center;
 	
 }
@@ -95,7 +95,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-form .group{
 	margin-bottom:20px;
-	/margin-left: 463px;/
+	/*margin-left: 463px;*/
 }
 .login-form .group .label,
 .login-form .group .input,
