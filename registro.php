@@ -4,7 +4,9 @@
 session_start();
 
 if (isset($_SESSION['user_id'])) {
-    header('Location:  comprar.php');
+  $user = $_SESSION['user_id'];
+  echo "<script type='text/javascript'>alert('$user');</script>";
+    //header('Location:  comprar.php');
 
 }
 
