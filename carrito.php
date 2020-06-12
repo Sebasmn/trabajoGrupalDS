@@ -52,7 +52,7 @@ switch($_GET["action"]) {
 <div id="shopping-cart">
 <div class="txt-heading">Carrito de compras</div>
 
-<a id="btnEmpty" href="index.php?action=empty">Vaciar carrito</a>
+<a id="btnEmpty" href="carrito.php?action=empty">Vaciar carrito</a>
 <?php
 if(isset($_SESSION["cart_item"])){
     $total_quantity = 0;
@@ -78,7 +78,7 @@ if(isset($_SESSION["cart_item"])){
 				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ".$item["PRECIO"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-				<td style="text-align:center;"><a href="index.php?action=remove&code=<?php echo $item["CODIGO"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+				<td style="text-align:center;"><a href="carrito.php?action=remove&code=<?php echo $item["CODIGO"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
 				</tr>
 				<?php
 				$total_quantity += $item["quantity"];
@@ -111,7 +111,7 @@ if(isset($_SESSION["cart_item"])){
 		foreach($product_array as $key=>$value){
 	?>
 		<div class="product-item">
-			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["CODIGO"]; ?>">
+			<form method="post" action="carrito.php?action=add&code=<?php echo $product_array[$key]["CODIGO"]; ?>">
 			<div class="product-image"><img src="<?php echo $product_array[$key]["IMAGEN"]; ?>"></div>
 			<div class="product-tile-footer">
 			<div class="product-title"><?php echo $product_array[$key]["NOMBRE"]; ?></div>
