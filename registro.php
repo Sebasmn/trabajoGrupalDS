@@ -40,7 +40,7 @@ $sql->execute([
   'DIRECCION' => $DIRECCION,
   'CLAVE' =>$CLAVE,
 ]);
-    $conn->exec($sql);
+    //$conn->exec($sql);
     $_SESSION['user_id'] = $NOMBRE+ " "+$APELLIDO;
     $usuario = $_SESSION['user_id'] ;
     echo "<script type='text/javascript'>alert('$usuario');</script>";
