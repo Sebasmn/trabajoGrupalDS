@@ -1,12 +1,12 @@
 <?php
  require 'conexion.php';
 // Check connection
-//session_start();
+session_start();
 //session_destroy();
 if (isset($_SESSION['user_id'])) {
   $user = $_SESSION['user_id'];
-  echo "<script type='text/javascript'>alert('$user');</script>";
-    //header('Location:  comprar.php');
+  //echo "<script type='text/javascript'>alert('$user');</script>";
+    header('Location:  comprar.php');
 
 }else{
 
@@ -43,20 +43,15 @@ $sql->execute([
   'CLAVE' =>$CLAVE,
 ]);
     //$conn->exec($sql);
-    $_SESSION['user_id'] = $NOMBRE+ " "+$APELLIDO;
+    $_SESSION['user_id'] = $NOMBRE;
     $usuario = $_SESSION['user_id'] ;
     echo "<script type='text/javascript'>alert('$usuario');</script>";
 
     //
     $_SESSION['user_id'] = $NOMBRE;
     $usuario = $_SESSION['user_id'] ;
-    echo "<script type='text/javascript'>alert('$usuario');</script>";
-   
-    //  header('Location:  comprar.php');
-
-
-    //
-    
+    echo "<script type='text/javascript'>alert('$usuario');</script>"   ;
+      header('Location:  comprar.php');
 
   } catch(PDOException $e) {
     echo $e->getMessage();
@@ -68,7 +63,7 @@ $sql->execute([
     
     </script>";
   //  header('Location:  prueba.html');
-  header('Location:  loginFinal.php');
+header('Location:  loginFinal.php');
   }
   
   $conn = null;
