@@ -153,7 +153,7 @@ if (isset($_SESSION['user_id'])) :
   
     document.getElementById("status").innerHTML=
     "Sesion Abierta! "
-+
+
 
     ;
  
