@@ -1,6 +1,14 @@
 <?php
  require 'conexion.php';
 // Check connection
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    header('Location:  comprar.hp');
+
+}
+
+//
 $NOMBRE = $_POST['nombre'];
 $APELLIDO = $_POST['apellido'];
 $CEDULA = $_POST['cedula'];
@@ -58,7 +66,7 @@ $sql->execute([
     
     </script>";
   //  header('Location:  prueba.html');
- // header('Location:  loginFinal.html');
+  header('Location:  loginFinal.php');
   }
   
   $conn = null;
