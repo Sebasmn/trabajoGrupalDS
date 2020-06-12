@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id'])) :
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>                        
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="comprar.php">Comprar</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="carrito.php">Comprar</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contacto</a></li>
                     </ul>
                 </div>
