@@ -5,7 +5,7 @@ session_start();
 
 if (isset($_SESSION['user_id'])) :
     # code...
- /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/ 
+ /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/    
  
     echo'<script type="text/javascript">
    
@@ -148,7 +148,6 @@ echo'<script type="text/javascript">
 if (isset($_SESSION['user_id'])) :
     # code...
  /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/ 
- $_SESSION['user_id'] = $NOMBRE;
  $usuario = $_SESSION['user_id'] ;
     echo'<script type="text/javascript">
   
