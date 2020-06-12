@@ -62,12 +62,13 @@
                         <label for="nombre" class="label">Nombre</label>
                         <input
                         required="true"
-                         id="nombre" type="text" class="input">
+                         id="nombre" type="text" class="input"
+                         name="nombre">
                     </div>
 
                     <div class="group">
                         <label for="apellido" class="label">Apellido</label>
-                        <input 
+                        <input  name="apellido"
                         required="true"
                         id="apellido" type="text" class="input">
                     </div>
@@ -75,7 +76,7 @@
                     
                     <div class="group">
                         <label for="cedula" class="label">Cedula</label>
-                        <input 
+                        <input   name="cedula"
                         required="true"
                         id="cedula" type="text" class="input">
                     </div>
@@ -83,7 +84,7 @@
                     
                     <div class="group">
                         <label for="clave" class="label">Contraseña</label>
-                        <input 
+                        <input name="clave"
                         required="true"
                         id="clave" type="password" class="input" data-type="password">
                     </div>
@@ -93,7 +94,7 @@
 
                     <div class="group">
                         <label for="clave2" class="label">Repita la contraseña</label>
-                        <input  
+                        <input  name="clave2"
                          required="true"
                          id="clave2" type="password" class="input" data-type="password">
                     </div>
@@ -102,17 +103,25 @@
 
                     <div class="group">
                         <label for="email" class="label">Correo Electrónico</label>
-                        <input
+                        <input  name="email"
                         required="true"
                          id="email" type="email" class="input"    >
                     </div>
                     <div class="group">
                         <label for="telefono" class="label">Telefono</label>
-                        <input
+                        <input name="telefono"
                           required="true"
                         id="telefono" type="tel" class="input">
                     </div>
              
+                    <div class="group">
+                        <label for="direccion" class="label">Direccion</label>
+                        <input name="direccion"
+                          required="true"
+                        id="direccion" type="text" class="input">
+                    </div>
+
+
                     <div class="group">
                         <input type="submit" class="button" value="Registrarse">
                     </div>
