@@ -79,7 +79,10 @@ switch($_GET["action"]) {
         <link href="css/styles.css" rel="stylesheet" />
         <link href="style.css" type="text/css" rel="stylesheet" />
     </head>
+        </header>
     <body id="page-top">
+        
+        <header class="masthead">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
@@ -101,7 +104,13 @@ switch($_GET["action"]) {
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        <br><br><br>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        
 <div id="shopping-cart">
 
 <a id="btnEmpty" href="comprar.php?action=empty">Vaciar carrito</a>
@@ -177,15 +186,6 @@ if(isset($_SESSION["cart_item"])){
 	}
 	?>
 </div>
-        </header>
-        <br><br><br>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">Poner aqui la tabla de compras</h2>
-                        
                     </div>
                 </div>
                 <img class="img-fluid" src="assets/img/ipad.png" alt="" />
