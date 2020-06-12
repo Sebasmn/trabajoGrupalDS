@@ -9,9 +9,9 @@
 
     require 'conexion.php'; 
 
-    if (!empty($_POST['usuario']) && !empty($_POST['clave'])) {
-        $records = $conn->prepare('SELECT * FROM usuarios WHERE NOMBRE=:usuario');
-        $records->bindParam(':usuario', $_POST['usuario']);
+    if (!empty($_POST['cedula']) && !empty($_POST['clave'])) {
+        $records = $conn->prepare('SELECT * FROM usuarios WHERE CEDULA=:cedula');
+        $records->bindParam(':cedula', $_POST['cedula']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
