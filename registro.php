@@ -1,14 +1,14 @@
 <?php
  require 'conexion.php';
 // Check connection
-session_start();
-
+//session_start();
+//session_destroy();
 if (isset($_SESSION['user_id'])) {
   $user = $_SESSION['user_id'];
   echo "<script type='text/javascript'>alert('$user');</script>";
     //header('Location:  comprar.php');
 
-}
+}else{
 
 //
 $NOMBRE = $_POST['nombre'];
@@ -72,5 +72,6 @@ $sql->execute([
   }
   
   $conn = null;
+}
 
   ?>  
