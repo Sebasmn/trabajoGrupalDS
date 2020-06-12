@@ -47,8 +47,35 @@ switch($_GET["action"]) {
 <HEAD>
 <TITLE>Carrito de compras</TITLE>
 <link href="style.css" type="text/css" rel="stylesheet" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
 </HEAD>
 <BODY>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a 
+                id="status"
+                class="navbar-brand js-scroll-trigger" 
+                href="#page-top">
+            
+            
+            </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>                        
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="carrito.php">Comprar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 <div id="shopping-cart">
 <div class="txt-heading">Carrito de compras</div>
 
