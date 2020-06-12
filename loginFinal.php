@@ -40,14 +40,19 @@ if (!isset($_SESSION['user_id'])) :
             <div class="login-form">
             <!-- Fromulario LOGIN -->   
             <div class="sign-in-htm">
-            <form  action=login.php id=formularioLog  method="post" >
+            <form  action=login.php  id=formularioLog  method=post >
                     <div class="group">
                         <label for="cedula" class="label">Cedula</label>
-                        <input id="cedula" type="text" class="input">
+                        <input  required=true
+                        name="cedula"
+                        id="cedula" type="text" class="input">
                     </div>
                     <div class="group">
                         <label for="claveLog" class="label">Clave de Acceso</label>
-                        <input id="claveLog" type="password" class="input" data-type="password">
+                        <input required=true
+                        
+                        name="claveLog" 
+                        id="claveLog" type="password" class="input" data-type="password">
                     </div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked>
@@ -56,11 +61,12 @@ if (!isset($_SESSION['user_id'])) :
                     <div class="group">
                         <input type="submit" class="button" value="Ingresar">
                     </div>
+                    </form>
                     <div class="hr"></div>
                     <div class="foot-lnk">
                         <a href="#forgot">No recuerdas tu clave?</a>
                     </div>
-            </form>
+            
             <!-- Fromulario LOGIN -->   
 
 
