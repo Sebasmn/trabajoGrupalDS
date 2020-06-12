@@ -15,9 +15,11 @@
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" onclick="mostrar()">Registrarse</label>
+            
             <div class="login-form">
                 <div class="sign-in-htm">
+                   
                     <div class="group">
                         <label for="user" class="label">Cedula</label>
                         <input id="user" type="text" class="input">
@@ -28,7 +30,6 @@
                     </div>
 
 
-                    
                     
 
                     <div class="group">
@@ -55,32 +56,43 @@
                 </div>
                 <div class="sign-up-htm">
                     <div class="group">
+                        <label for="nombre" class="label">Nombre</label>
+                        <input id="nombre" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="apellido" class="label">Apellido</label>
+                        <input id="apellido" type="text" class="input">
+                    </div>
+
+                    
+                    <div class="group">
                         <label for="user" class="label">Cedula</label>
                         <input id="user" type="text" class="input">
                     </div>
+                    
+                    
                     <div class="group">
-                        <label for="pass" class="label">Clave de Acceso</label>
+                        <label for="pass" class="label">Contraseña</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+
+                    <div id="myMap" 
+                    ></div>
+
+                    <div class="group">
+                        <label for="pass" class="label">Repita la contraseña</label>
                         <input id="pass" type="password" class="input" data-type="password">
                     </div>
 
                     
 
                     <div class="group">
-                        <label for="pass" class="label">Repetir Clave de Acceso</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <label for="pass" class="label">Correo Electrónico</label>
+                        <input id="pass" type="text" class="input"    >
                     </div>
-
-
-
-                    <div id="myMap" 
-                    ></div>
-
                     <div class="group">
-                        <label for="pass" class="label">Direccion </label>
-                        <input id="pass" type="text" class="input"
-                        onfocus="mostrar()"
-                       
-                        >
+                        <label for="telefono" class="label">Telefono</label>
+                        <input id="telefono" type="tel" class="input">
                     </div>
              
                     <div class="group">
@@ -102,6 +114,7 @@
 
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
+   crossorigin="">
+</script>
    <script src="map.js"></script>
 </html>

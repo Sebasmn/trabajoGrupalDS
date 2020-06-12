@@ -3,6 +3,7 @@ body{
 	color:#6a6f8c;
 	background:#c8c8c8;
 	font:600 16px/18px 'Open Sans',sans-serif;
+	height: 100%;
 }
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
@@ -11,7 +12,7 @@ a{color:inherit;text-decoration:none}
 
 .login-wrap{
 	width:100%;
-	/*margin:auto;*/
+	/margin:auto;/
 	float: left;
 	max-width:1525px;
 	min-height:850px;
@@ -21,6 +22,7 @@ a{color:inherit;text-decoration:none}
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
+	
 	float: left;
 	width:100%;
 	height:100%;
@@ -39,7 +41,7 @@ a{color:inherit;text-decoration:none}
 	position:absolute;
 	transform:rotateY(180deg);
 	backface-visibility:hidden;
-	/*transition:all .4s linear;*/
+	/transition:all .4s linear;/
 }
 
 
@@ -47,6 +49,7 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-up,
 .login-form .group .check{
 	display:none;
+	
 }
 .login-html .tab,
 .login-form .group .label,
@@ -66,14 +69,16 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-up:checked + .tab{
 	color:#fff;
 	border-color:#1161ee;
-	/*margin-left: 600px;*/
+	/margin-left: 600px;/
+	
 }
 
 .login-html .sign-in:default + .tab,
 .login-html .sign-up:default + .tab{
-
-	/*margin-left: 463px;*/
+	align-content: center;
+	/margin-left: 463px;/
 	align-self: center;
+	
 }
 
 
@@ -81,7 +86,8 @@ a{color:inherit;text-decoration:none}
 
 
 .login-form{
-	
+	margin-left: 15%;
+	margin-right: 10%;
 	min-height:345px;
 	position:relative;
 	perspective:1000px;
@@ -89,23 +95,25 @@ a{color:inherit;text-decoration:none}
 }
 .login-form .group{
 	margin-bottom:20px;
-	/*margin-left: 463px;*/
+	/margin-left: 463px;/
 }
 .login-form .group .label,
 .login-form .group .input,
 .login-form .group .button{
-	width:50%;
+	
+	width:40%;
 	color:#fff;
 	display:block;
 	font-size: 15px;
 }
 .login-form .group .input,
 .login-form .group .button{
+	top: 100px;
 	border:none;
-	padding:15px 20px;
+	padding:8px 20px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
-	margin-top: 20px;
+	margin-top: 1px;
 }
 .login-form .group input[data-type="password"]{
 	
@@ -181,13 +189,13 @@ a{color:inherit;text-decoration:none}
 #myMap{
 	float: right;
 	width: 500px;
-	height: 350px;
+	height: 300px;
 	border-color: black;
-	background-color:rgba(255,255,255,.1);
+	background-color:rgba(255,255,255,.1);/
 	margin-top: -180px;
 	visibility: hidden;
 	border: 5px solid ;
-	border-color:aqua;
+	border-color:white;
+	border-radius:25px;
 
 }
-
