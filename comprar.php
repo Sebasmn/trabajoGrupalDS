@@ -3,7 +3,7 @@
 session_start();
 
 
-if (!isset($_SESSION['user_id'])) :
+if (isset($_SESSION['user_id'])) :
     # code...
  
     echo'<script type="text/javascript">

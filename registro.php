@@ -50,7 +50,7 @@ $sql->execute([
     $usuario = $_SESSION['user_id'] ;
     echo "<script type='text/javascript'>alert('$usuario');</script>";
    
-      header('Location:  comprar.php');
+    //  header('Location:  comprar.php');
 
 
     //
