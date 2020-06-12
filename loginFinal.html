@@ -12,6 +12,9 @@
 </head>
 
 <body >
+   
+
+    
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
@@ -51,7 +54,7 @@
 
 
 
-
+                    <form  action=registro.php id=formulario  method="post" onsubmit="return validar()">
 
                 </div>
                 <div class="sign-up-htm">
@@ -66,29 +69,29 @@
 
                     
                     <div class="group">
-                        <label for="user" class="label">Cedula</label>
-                        <input id="user" type="text" class="input">
+                        <label for="cedula" class="label">Cedula</label>
+                        <input id="cedula" type="text" class="input">
                     </div>
                     
                     
                     <div class="group">
-                        <label for="pass" class="label">Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <label for="clave" class="label">Contraseña</label>
+                        <input id="clave" type="password" class="input" data-type="password">
                     </div>
 
                     <div id="myMap" 
                     ></div>
 
                     <div class="group">
-                        <label for="pass" class="label">Repita la contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <label for="clave2" class="label">Repita la contraseña</label>
+                        <input id="clave2" type="password" class="input" data-type="password">
                     </div>
 
                     
 
                     <div class="group">
-                        <label for="pass" class="label">Correo Electrónico</label>
-                        <input id="pass" type="text" class="input"    >
+                        <label for="email" class="label">Correo Electrónico</label>
+                        <input id="email" type="email" class="input"    >
                     </div>
                     <div class="group">
                         <label for="telefono" class="label">Telefono</label>
@@ -98,6 +101,8 @@
                     <div class="group">
                         <input type="submit" class="button" value="Registrarse">
                     </div>
+                </form>
+
                     <div class="hr"></div>
                     <div class="foot-lnk">
                         <label for="tab-1">Ya eres miembro?</a>
@@ -107,7 +112,7 @@
         </div>
         
     </div>
-  
+
 
 
 </body>
