@@ -8,8 +8,8 @@ if (isset($_SESSION['user_id'])) :
  /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/ 
  
     echo'<script type="text/javascript">
-
-    document.getElementsById("status").innerHTML="Sesion Abierta!";
+   
+    
  
     </script>';
    
@@ -41,7 +41,10 @@ if (isset($_SESSION['user_id'])) :
                 <a 
                 id="status"
                 class="navbar-brand js-scroll-trigger" 
-                href="#page-top">Start Bootstrap</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+                href="#page-top">
+            
+            
+            </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>
@@ -137,5 +140,28 @@ echo'<script type="text/javascript">
 ?>
 
 
+<?php endif; ?>
+
+<?php 
+
+
+if (isset($_SESSION['user_id'])) :
+    # code...
+ /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/ 
+ $_SESSION['user_id'] = $NOMBRE;
+ $usuario = $_SESSION['user_id'] ;
+    echo'<script type="text/javascript">
+  
+    document.getElementById("status").innerHTML=
+    "Sesion Abierta! "
++
+
+    ;
+ 
+    </script>';
+   
+
+
+?>
 <?php endif; ?>
 </html>
