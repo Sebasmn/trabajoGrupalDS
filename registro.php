@@ -4,7 +4,7 @@
 session_start();
 
 if (isset($_SESSION['user_id'])) {
-    header('Location:  comprar.hp');
+    header('Location:  comprar.php');
 
 }
 
@@ -71,4 +71,4 @@ $sql->execute([
   
   $conn = null;
 
-  ?>
+  ?>  

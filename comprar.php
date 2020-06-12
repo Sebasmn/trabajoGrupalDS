@@ -1,3 +1,20 @@
+<?php 
+
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) :
+    # code...
+ 
+    echo'<script type="text/javascript">
+    alert(" NO HAY SESION ");
+ 
+    </script>';
+   
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -104,4 +121,15 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+    <?php else:  
+
+
+echo'<script type="text/javascript">
+    alert(" NO HAY SESION ");
+ 
+    </script>';
+?>
+
+
+<?php endif; ?>
 </html>
