@@ -14,7 +14,7 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $sql = $conn->prepare("  INSERT INTO usuarios 
-    (NOMBRE ,APELLIDO,CEDULA,'EMAIL',TELEFONO,DIRECCION,CLAVE) 
+    (NOMBRE ,APELLIDO,CEDULA,EMAIL,TELEFONO,DIRECCION,CLAVE) 
      VALUES(:NOMBRE,
     :APELLIDO,
     :CEDULA,
@@ -37,17 +37,28 @@ $sql->execute([
     $usuario = $_SESSION['user_id'] ;
     echo "<script type='text/javascript'>alert('$usuario');</script>";
 
+    //
+    $_SESSION['user_id'] = $NOMBRE;
+    $usuario = $_SESSION['user_id'] ;
+    echo "<script type='text/javascript'>alert('$usuario');</script>";
    
-  header('Location:  comprar.php');
+      header('Location:  comprar.php');
 
 
     //
     
 
   } catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    echo $e->getMessage();
+    $msg="Errores al ingresar, por favor revise e intente de nuevo.";
+    echo "<script type='text/javascript'>
+    
+    alert('$msg');
+    
+    
+    </script>";
   //  header('Location:  prueba.html');
-  header('Location:  loginFinal.html');
+ // header('Location:  loginFinal.html');
   }
   
   $conn = null;
