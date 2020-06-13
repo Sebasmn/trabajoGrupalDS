@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])) :
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
 
-   
+    
     <script src="js/validarCedula.js"></script>
 </head>
 
@@ -41,7 +41,8 @@ if (!isset($_SESSION['user_id'])) :
             <div class="login-form">
             <!-- Fromulario LOGIN -->   
             <div class="sign-in-htm">
-            <form  action=login.php  id=formularioLog  method=post >
+            <form  action=login.php  id=formularioLog 
+             method=post >
                     <div class="group">
                         <label for="cedula" class="label">Cedula</label>
                         <input  required=true
@@ -74,10 +75,11 @@ if (!isset($_SESSION['user_id'])) :
 
 
             <!-- Fromulario REGISTRO -->   
-                    <form  action=registro.php id=formulario  
+                    <form 
+                    action=registro.php
+                     id=formulario  
                     method="post"
-                     onsubmit="return validar()">
-
+                     onsubmit="return validarRegistro()">
                 </div>
                 <div class="sign-up-htm">
                     <div class="group">
@@ -99,18 +101,21 @@ if (!isset($_SESSION['user_id'])) :
                     
                     
                     <div class="group">
-                        <label for="cedulaR" class="label">Cedula</label>
-                        <input   name="cedulaR"
+                        <label for="cedulaR" 
+                        class="label">Cedula</label>
+                        <input  
+                         name="cedulaR"
                         required="true"
-                        id="cedula" type="text" class="input">
+                        id="cedulaR" type="number" class="input">
                     </div>
                     
                     
                     <div class="group">
                         <label for="clave" class="label">Contraseña</label>
-                        <input name="clave"
+                        <input
+                         name="claveR"
                         required="true"
-                        id="clave" type="password" class="input" data-type="password">
+                        id="claveR" type="password" class="input" data-type="password">
                     </div>
                         
                     <div id="myMap" 
@@ -121,7 +126,8 @@ if (!isset($_SESSION['user_id'])) :
                         <label for="clave2" class="label">Repita la contraseña</label>
                         <input  name="clave2"
                          required="true"
-                         id="clave2" type="password" class="input" data-type="password">
+                         id="clave2" type="password" 
+                         class="input" data-type="password">
                     </div>
 
                     
@@ -134,9 +140,10 @@ if (!isset($_SESSION['user_id'])) :
                     </div>
                     <div class="group">
                         <label for="telefono" class="label">Telefono</label>
-                        <input name="telefono"
+                        <input 
+                        name="telefono"
                           required="true"
-                        id="telefono" type="tel" class="input">
+                        id="telefono" type="number" class="input">
                     </div>
              
                     <div class="group">
@@ -157,7 +164,9 @@ if (!isset($_SESSION['user_id'])) :
 
 
                     <div class="group">
-                        <input type="submit" class="button" value="Registrarse">
+                        <input
+                         type="submit" 
+                         class="button" value="Registrarse">
                     </div>
                 </form>
 

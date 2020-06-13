@@ -11,7 +11,7 @@ $NOMBRE = $_POST['nombre'];
 $APELLIDO = $_POST['apellido'];
 $CEDULA = $_POST['cedulaR'];
 $TELEFONO = $_POST['telefono'];
-$CLAVE = $_POST['clave'];
+$CLAVE = $_POST['claveR'];
 $DIRECCIONLAT = $_POST['direccionLAT'];
 $DIRECCIONLON = $_POST['direccionLON'];
 $EMAIL = $_POST['email'];
@@ -21,8 +21,7 @@ $EMAIL = $_POST['email'];
         $records->bindParam(':cedula', $_POST['cedulaR']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-    if (!$results 
-    && 
+    if (
     count($results['ID']) == 0 
     ) {
     try {
@@ -64,7 +63,7 @@ $sql->execute([
     header('Location:  comprar.php');
     
   } catch(PDOException $e) {
-    echo $e->getMessage();
+    //echo $e->getMessage();
     $msg="Errores al ingresar, por favor revise e intente de nuevo.";
     echo "<script type='text/javascript'>
         

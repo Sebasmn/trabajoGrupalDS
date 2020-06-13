@@ -1,17 +1,8 @@
 //
-
-// Disable Mouse scrolling
-
-//
-document.getElementById("myMap").style.display = "none";
-function validar(){
+function validarRegistro(){
   var cedula = document.getElementById("cedulaR").value;
   var cadena= cedula.split("");
-  $bool =  cadena.some(isNan);
-  alert($bool);
-  if(   
-   true
-  ){ 
+  if(   cadena.length==10){ 
     var provincia =  cedula[0].toString() +  cedula[1].toString();
     var n = parseInt(provincia);
     var total=0;
@@ -39,35 +30,40 @@ function validar(){
             }
            var resultado = decimalSiguiente - total;
            if(resultado == cadena[cadena.length-1]     ){
-    
-          //  document.getElementById("validez").innerText= "Validado: "+
-            //resultado + " = "+cadena[cadena.length-1] ;
-           // alert("CORRECTO");
-            document.getElementById("formulario").submit();
-          
-            return true;
+             //CEDULA CORRECTA
+             var clave2 = document.getElementById("clave2").value;
+             var claveR = document.getElementById("claveR").value;
+            //CLAVES COINCIDAN
+            if ( clave2== claveR){
+              document.getElementById("formulario").submit();
+              return true;
+            }else{
+              alert('Contraseñas no coinciden ');
+              document.getElementById("clave2").value="";
+              document.getElementById("claveR").value="";
+              document.getElementById("claveR").focus();
+              return false;
+            }
+            
            }
     }else{
     
         //document.getElementById("validez").innerText="No valido";
         alert("Digite una cédula correcta.");
-        document.getElementById("cedula").value="";
-        document.getElementById("cedula").focus();
+        document.getElementById("cedulaR").value="";
+        document.getElementById("cedulaR").focus();
         return false;
     }
     
     }else{
       //CONTIENE LETRAS O DIGITOS
-      alert("Digite una cédula correcta.Solo numeros !");
-      document.getElementById("cedula").value="";
-        document.getElementById("cedula").focus();
+      alert("Revise formato cedula !");
+      document.getElementById("cedulaR").value="";
+        document.getElementById("cedulaR").focus();
         return false;
-      //document.getElementById("mensajeCedula").style.visibility="visible";
     }
   }
-
-    
-
+document.getElementById("myMap").style.display = "none";
 function mostrar(){
   
   document.getElementById("myMap").style.visibility = "visible";
