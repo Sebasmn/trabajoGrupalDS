@@ -93,8 +93,8 @@ if (!isset($_SESSION['user_id'])) :
                     
                     
                     <div class="group">
-                        <label for="cedula" class="label">Cedula</label>
-                        <input   name="cedula"
+                        <label for="cedulaR" class="label">Cedula</label>
+                        <input   name="cedulaR"
                         required="true"
                         id="cedula" type="text" class="input">
                     </div>

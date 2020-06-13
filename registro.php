@@ -9,19 +9,20 @@ if (isset($_SESSION['user_id'])) {
 }else{
 $NOMBRE = $_POST['nombre'];
 $APELLIDO = $_POST['apellido'];
-$CEDULA = $_POST['cedula'];
+$CEDULA = $_POST['cedulaR'];
 $TELEFONO = $_POST['telefono'];
 $CLAVE = $_POST['clave'];
 $DIRECCIONLAT = $_POST['direccionLAT'];
 $DIRECCIONLON = $_POST['direccionLON'];
 $EMAIL = $_POST['email'];
 //Comprobar usuarios existentes
-  $records = $conn->prepare('SELECT * FROM usuarios WHERE CEDULA=:cedula');
-        $records->bindParam(':cedula', $_POST['cedula']);
+  $records = $conn->prepare('SELECT * FROM usuarios
+   WHERE CEDULA=:cedula');
+        $records->bindParam(':cedula', $_POST['cedulaR']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-        $message = '';
-    if (count($results) == 1 ) {
+    if (!$results //&& count($results) == 0 
+    ) {
     try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = $conn->prepare("  INSERT INTO usuarios 
@@ -48,25 +49,37 @@ $sql->execute([
 ]);
     //$conn->exec($sql);
     $_SESSION['user_id'] = $NOMBRE;
+    //
+    $records = $conn->prepare('SELECT * FROM usuarios
+      WHERE CEDULA=:cedula');
+        $records->bindParam(':cedula', $_POST['cedulaR']);
+        $records->execute();
+        $results = $records->fetch(PDO::FETCH_ASSOC);
+    //
+    $_SESSION['rol'] =$results['ROL'];
+    $rol = $_SESSION['rol'];
     $usuario = $_SESSION['user_id'] ;
-      header('Location:  comprar.php');
+    header('Location:  comprar.php');
     
   } catch(PDOException $e) {
     echo $e->getMessage();
     $msg="Errores al ingresar, por favor revise e intente de nuevo.";
     echo "<script type='text/javascript'>
-    
-    alert('$msg');
-    
+        
+    if(!alert('$msg')){
+        window.location.href = 'loginFinal.php';
+       }
     
     </script>";
-  //  header('Location:  prueba.html');
-header('Location:  loginFinal.php');
   }
 }else{
-    $alerta = "Usuario ya existe !";
+
     echo "<script type='text/javascript'>
-    alert('$alerta');
+        
+    if(!alert('Usuario ya existe !')){
+        window.location.href = 'loginFinal.php';
+       }
+    
     </script>";
   }
 
