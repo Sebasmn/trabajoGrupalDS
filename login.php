@@ -33,13 +33,8 @@
         }
     }else{
         $message = 'Campos vacios';
-        
-        
-        $des = $_POST['cedula'];
-        $asda = $_POST['claveLog'];
-        echo "<script type='text/javascript'>alert('$des');</script>";
-        echo "<script type='text/javascript'>alert('$asda');</script>";
         //MOSTRAR QUE HA COMETIDO ERRORES
+        echo "<script type='text/javascript'>alert('$message');</script>";
     }
     
 ?> 

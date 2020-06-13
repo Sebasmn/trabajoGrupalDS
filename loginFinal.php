@@ -134,12 +134,20 @@ if (!isset($_SESSION['user_id'])) :
                     </div>
              
                     <div class="group">
-                        <input name="direccion"
+                        <input name="direccionLAT"
                           required="true"
-                        id="direccion" 
-                        type="hidden"
+                        id="direccionLAT" 
+                      
                          class="input">
                     </div>
+                    <div class="group">
+                        <input name="direccionLON"
+                          required="true"
+                        id="direccionLON" 
+                        
+                         class="input">
+                    </div>
+
 
 
                     <div class="group">
