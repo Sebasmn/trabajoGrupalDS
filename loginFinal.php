@@ -45,7 +45,7 @@ if (!isset($_SESSION['user_id'])) :
               class="sign-in" ><label for="tab-3" class="tab" >
               <a
               href="index.php" >  
-              Home
+              Inicio
                     </a>
                 </label>
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION['user_id'])) :
             <div class="login-form">
             <!-- Fromulario LOGIN -->   
             <div class="sign-in-htm">
-            <form  action=login.php  id=formularioLog 
+            <form  action=login.php  id=formularioLog onsubmit= 'return validarLogin()'
              method=post >
                     <div class="group">
                         <label for="cedula" class="label">Cedula</label>

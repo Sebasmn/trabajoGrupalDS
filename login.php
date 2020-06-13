@@ -17,10 +17,13 @@
         $records->bindParam(':clave', $_POST['claveLog']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-        $c=count($results['ID']);
+    
+        //$c=count($results['ID']);
+   
+     
        
-        if ($results &&
-        $c == 1  //&& $_POST['claveLog'] = $results['CLAVE']
+        if ($results
+         //&& $_POST['claveLog'] = $results['CLAVE']
           ) {
             $_SESSION['rol'] =$results['ROL'];
             $rol =   $_SESSION['rol'] ;
@@ -29,17 +32,17 @@
           header('Location:  comprar.php');
            // $message2 = "Bienvenido";
         } else {
-           
             echo "<script type='text/javascript'>
             
             
-           if(!alert('Usuario no existe o contraseña incorrecta')){
-            window.location.href = 'loginFinal.php';
-           }
+            if(!alert('Usuario no existe o contraseña incorrecta')){
+             window.location.href = 'loginFinal.php';
+            }
+             
+             
+             
+             </script>";
             
-            
-            
-            </script>";
             //MOSTRA QUE NO HAY RESULTADOS
          //   header('Location:  loginFinal.php');
         }
