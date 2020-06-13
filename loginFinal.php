@@ -120,7 +120,13 @@ if (!isset($_SESSION['user_id'])) :
                         
                     <div id="myMap" 
                     >
+                    
                 </div>
+                <div  >
+                    <img 
+                    id="direccionSeleccionada"
+                    src="imagenes/visto.png">
+                    </div>
 
                     <div class="group">
                         <label for="clave2" class="label">Repita la contraseña</label>
@@ -151,13 +157,16 @@ if (!isset($_SESSION['user_id'])) :
                           required="true"
                         id="direccionLAT" 
                         type='hidden'
-                         class="input">
+                         class="input"
+                         value=""
+                         >
                     </div>
                     <div class="group">
                         <input name="direccionLON"
                           required="true"
                         id="direccionLON" 
                         type='hidden'
+                        value=""
                          class="input">
                     </div>
 

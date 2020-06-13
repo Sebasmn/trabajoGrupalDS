@@ -1,7 +1,48 @@
 //
 function validarRegistro(){
+var cedulaB=false;
+var claveB=false;
+var direccionB=false;
+
+
   var cedula = document.getElementById("cedulaR").value;
   var cadena= cedula.split("");
+
+
+  //DIRECCION
+  var direccionLAT = document.getElementById("direccionLAT").value;
+var direccionLON = document.getElementById("direccionLON").value;
+            
+              if(
+                direccionLAT!=""  && direccionLON != ""
+              ){
+                direccionB=true;
+                //document.getElementById("formulario").submit();
+                //VARA BOOL
+                //return true;
+
+              }else{
+                
+                 document.getElementById("myMap").focus();
+                // return false;
+              }
+
+  //CLAVES
+  var clave2 = document.getElementById("clave2").value;
+  var claveR = document.getElementById("claveR").value;
+ //CLAVES COINCIDAN
+ if ( clave2== claveR){
+   claveB=true;
+//VAR BOOL
+
+ }else{
+
+   document.getElementById("clave2").value="";
+   document.getElementById("claveR").value="";
+   document.getElementById("claveR").focus();
+//   return false;
+ }
+  //
   if(   cadena.length==10){ 
     var provincia =  cedula[0].toString() +  cedula[1].toString();
     var n = parseInt(provincia);
@@ -31,50 +72,56 @@ function validarRegistro(){
            var resultado = decimalSiguiente - total;
            if(resultado == cadena[cadena.length-1]     ){
              //CEDULA CORRECTA
-             var clave2 = document.getElementById("clave2").value;
-             var claveR = document.getElementById("claveR").value;
-            //CLAVES COINCIDAN
-            if ( clave2== claveR){
-              var direccionLAT = document.getElementById("direccionLAT").value;
-              var direccionLON = document.getElementById("direccionLON").value;
-              if(
-                direccionLAT!=null && direccionLON != null
-              ){
-                document.getElementById("formulario").submit();
-                return true;
-
-              }else{
-                alert('Selecciona una ubicacion en el mapa..');
-                 document.getElementById("myMap").focus();
-                 return false;
-              }
-      
-            }else{
-              alert('Contraseñas no coinciden ');
-              document.getElementById("clave2").value="";
-              document.getElementById("claveR").value="";
-              document.getElementById("claveR").focus();
-              return false;
-            }
-            
+            //var bool
+            cedulaB=true;
            }
     }else{
     
         //document.getElementById("validez").innerText="No valido";
-        alert("Digite una cédula correcta.");
+   
         document.getElementById("cedulaR").value="";
         document.getElementById("cedulaR").focus();
-        return false;
+
     }
     
     }else{
       //CONTIENE LETRAS O DIGITOS
-      alert("Revise formato cedula !");
+  
       document.getElementById("cedulaR").value="";
         document.getElementById("cedulaR").focus();
-        return false;
+   
     }
+
+
+    if(
+      cedulaB ==true &&
+      claveB ==true &&
+      direccionB==true
+
+    ){
+      document.getElementById("formulario").submit();
+      return true;
+    }else{
+      if(cedulaB ==false ){
+        alert("Digite una cédula correcta.");
+        return false;
+       
+      }
+      if(claveB ==false ){
+        alert('Contraseñas no coinciden ');
+        return false;
+      }
+      if(direccionB ==false ){
+        alert('Selecciona una ubicacion en el mapa..');
+        return false;
+      }
+
+    }
+
+
   }
+
+
 document.getElementById("myMap").style.display = "none";
 function mostrar(){
   
