@@ -16,7 +16,8 @@ $APELLIDO = $_POST['apellido'];
 $CEDULA = $_POST['cedula'];
 $TELEFONO = $_POST['telefono'];
 $CLAVE = $_POST['clave'];
-$DIRECCION = $_POST['direccion'];
+$DIRECCIONLAT = $_POST['direccionLAT'];
+$DIRECCIONLON = $_POST['direccionLON'];
 $EMAIL = $_POST['email'];
 
 try {
@@ -24,13 +25,15 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $sql = $conn->prepare("  INSERT INTO usuarios 
-    (NOMBRE ,APELLIDO,CEDULA,EMAIL,TELEFONO,DIRECCION,CLAVE) 
+    (NOMBRE ,APELLIDO,CEDULA,EMAIL,TELEFONO,DIRECCIONLAT,
+    DIRECCIONLON,CLAVE) 
      VALUES(:NOMBRE,
     :APELLIDO,
     :CEDULA,
     :EMAIL,
     :TELEFONO,
-    :DIRECCION,
+    :DIRECCIONLAT,
+    :DIRECCIONLON,
     :CLAVE);"); 
 
 $sql->execute([

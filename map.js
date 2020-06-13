@@ -34,7 +34,8 @@ function success(pos) {
     latitud1=latLng.lat;
     longitud1=latLng.lng;
     direccion1 = latitud1+' '+longitud1;
-    document.getElementById("direccion").value=direccion1;
+    document.getElementById("direccionLAT").value=latitud1;
+    document.getElementById("direccionLON").value=longitud1;
   });
 
 

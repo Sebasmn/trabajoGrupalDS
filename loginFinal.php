@@ -136,7 +136,9 @@ if (!isset($_SESSION['user_id'])) :
                     <div class="group">
                         <input name="direccion"
                           required="true"
-                        id="direccion" type="hidden" class="input">
+                        id="direccion" 
+                        type="hidden"
+                         class="input">
                     </div>
 
 

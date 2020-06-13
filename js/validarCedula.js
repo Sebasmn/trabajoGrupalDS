@@ -4,6 +4,7 @@ document.getElementById("myMap").style.display = "none";
 function validar(){
    // var cedula = prompt("Ingrese su cedula");
     var cedula = document.getElementById("cedula").value;
+   // var direccion = document.getElementById("direccion").value;
     //alert("Validando");
     //document.getElementById("cedula").innerText="Cedula: "+ cedula;
     var cadena= cedula.split("");
@@ -54,10 +55,10 @@ function validar(){
     }
 
     //MOSTRAR MAPA
-function esconder(){
+/*function esconder(){
  
   document.getElementById("myMap").style.visibility = "hidden";
-}
+}*/
     
 
 function mostrar(){
