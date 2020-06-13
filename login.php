@@ -17,16 +17,15 @@
         $records->bindParam(':clave', $_POST['claveLog']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-     
-    
+      
         if ($results &&
-          count($results) > 0 //&& $_POST['claveLog'] = $results['CLAVE']
+        count($results['ID'])  == 1  //&& $_POST['claveLog'] = $results['CLAVE']
           ) {
             
             $_SESSION['user_id'] = $results['NOMBRE'];
             $usuario = $_SESSION['user_id'] ;
             echo "<script type='text/javascript'>alert('$usuario');</script>";
-
+            $_SESSION['rol'] =$results['ROL'];
            
           header('Location:  comprar.php');
            // $message2 = "Bienvenido";

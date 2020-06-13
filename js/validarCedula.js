@@ -1,13 +1,20 @@
 document.getElementById("myMap").style.display = "none";
-
-
 function validar(){
-   // var cedula = prompt("Ingrese su cedula");
-    var cedula = document.getElementById("cedulaR").value;
-   // var direccion = document.getElementById("direccion").value;
-    //alert("Validando");
-    //document.getElementById("cedula").innerText="Cedula: "+ cedula;
-    var cadena= cedula.split("");
+  var cedula = document.getElementById("cedulaR").value;
+  var cadena= cedula.split("");
+  if( (
+    cadena.includes(0)  ||
+  cadena.includes(1) ||
+  cadena.includes(2)  ||
+  cadena.includes(3) ||
+  cadena.includes(4) ||
+  cadena.includes(5) ||
+  cadena.includes(6) ||
+  cadena.includes(7) ||
+  cadena.includes(8) ||
+  cadena.includes(9)
+  )
+  ){ 
     var provincia =  cedula[0].toString() +  cedula[1].toString();
     var n = parseInt(provincia);
     var total=0;
@@ -52,13 +59,16 @@ function validar(){
         return false;
     }
     
+    }else{
+      //CONTIENE LETRAS O DIGITOS
+      alert("Digite una cédula correcta.Solo numeros !");
+      document.getElementById("cedula").value="";
+        document.getElementById("cedula").focus();
+        return false;
+      //document.getElementById("mensajeCedula").style.visibility="visible";
     }
+  }
 
-    //MOSTRAR MAPA
-/*function esconder(){
- 
-  document.getElementById("myMap").style.visibility = "hidden";
-}*/
     
 
 function mostrar(){

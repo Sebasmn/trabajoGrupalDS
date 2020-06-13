@@ -21,7 +21,9 @@ $EMAIL = $_POST['email'];
         $records->bindParam(':cedula', $_POST['cedulaR']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-    if (!$results //&& count($results) == 0 
+    if (!$results 
+    && 
+    count($results['ID']) == 0 
     ) {
     try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -2493,7 +2493,10 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #64a19d;
   border-color: #64a19d;
+  margin-right: 10px;
 }
+
+
 .btn-primary:hover {
   color: #fff;
   background-color: #548b87;
@@ -4109,6 +4112,7 @@ input[type=button].btn-block {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  margin-right: -110px;
 }
 
 .navbar-toggler {
@@ -10400,3 +10404,6 @@ left: 10px;
 .final1{
   width: 10%;
 }*/
+.botonAdmin{
+
+}

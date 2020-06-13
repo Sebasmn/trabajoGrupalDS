@@ -70,7 +70,9 @@ if (!isset($_SESSION['user_id'])) :
 
 
             <!-- Fromulario REGISTRO -->   
-                    <form  action=registro.php id=formulario  method="post" onsubmit="return validar()">
+                    <form  action=registro.php id=formulario  
+                    method="post"
+                     onsubmit="return validar()">
 
                 </div>
                 <div class="sign-up-htm">

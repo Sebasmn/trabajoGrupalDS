@@ -96,11 +96,21 @@ switch($_GET["action"]) {
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>                   
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="comprar.php">Comprar</a></li>
-                        <li><a 
+						<li><a 
+                        id="botonAdmin"
+                        style = "visibility:    hidden"
+                        class="btn btn-primary js-scroll-trigger"
+                         style="margin:15px" href="admin.php">
+						 Administrador
+						 </a></li>
+						<li><a 
                         id="botonCerrarSesion"
                         style = "visibility:    hidden"
                         class="btn btn-primary js-scroll-trigger"
-                         style="margin:15px" href="salir.php">Cerrar sesión</a></li>
+                         style="margin:15px" href="salir.php">
+						 Cerrar sesión
+						 </a></li>
+						 
                     </ul>
                 </div>
             </div>
@@ -216,15 +226,19 @@ if (isset($_SESSION['user_id'])) :
  /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/ 
  $usuario = $_SESSION['user_id'] ;
     echo'<script type="text/javascript">
-  
     document.getElementById("status").innerHTML=
-    "Sesion Abierta! "
-    ;
-
+    "Sesion Abierta! ";
     document.getElementById("botonCerrarSesion").style.visibility = "visible";
- 
     </script>';
    
+
+	if(isset($_SESSION['rol'])	&&	$_SESSION['rol']==1){
+		echo'<script type="text/javascript">
+		document.getElementById("botonAdmin	").style.visibility = "visible";
+		</script>';
+	}
+
+
 
 
 ?>
