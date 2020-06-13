@@ -1,3 +1,8 @@
+
+    <?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -24,7 +29,15 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>                      
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="comprar.php">Comprar</a></li>
-                        <li><a class="btn btn-primary js-scroll-trigger" style="margin:15px" href="#">Cerrar sesión</a></li>
+                        <li
+                    
+                        ><a 
+                        id="botonCerrarSesion"
+                        style = "visibility: hidden;"
+                        class="btn btn-primary js-scroll-trigger" 
+                        style="margin:15px"
+                         href="salir.php">Cerrar sesión
+                        </a></li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +48,7 @@
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase">Farmacias DS3</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Rapidez, Seguridad y Comodidad</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="#about">ENTRAR</a>
+                    <a class="btn btn-primary js-scroll-trigger" href="loginFinal.php">ENTRAR</a>
                 </div>
             </div>
         </header>
@@ -161,4 +174,33 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+    <?php
+
+
+if (isset($_SESSION['user_id'])) :
+    echo'<script type="text/javascript">
+
+    document.getElementById("botonCerrarSesion").style.visibility = "visible";
+    </script>';
+   
+?>
+    <?php 
+
+else:
+
+    echo'<script type="text/javascript">
+
+
+    document.getElementById("botonCerrarSesion").style.visibility = "hidden";
+ 
+    </script>';
+   
+ 
+
+
+//METER AQUI EL BOTON DE SALIR O ALGO MAS
+//header('Location: loginFinal.php'); 
+?>
+<?php  endif;
+ ?>
 </html>

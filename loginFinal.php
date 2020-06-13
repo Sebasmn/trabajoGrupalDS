@@ -2,12 +2,11 @@
 
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) :
     # code...
- 
+ /*ACCIONES CUANDO NO HAY SESION*/
     echo'<script type="text/javascript">
-    alert(" NO HAY SESION ");
+  
  
     </script>';
    

@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+
+if (isset($_SESSION['user_id'])) :
+
+
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
@@ -43,6 +48,7 @@ switch($_GET["action"]) {
 }
 }
 ?>
+
 <HTML>
 <HEAD>
 <TITLE>Carrito de compras</TITLE>
@@ -153,4 +159,10 @@ if(isset($_SESSION["cart_item"])){
 	?>
 </div>
 </BODY>
+<?php else:  
+
+//METER AQUI EL BOTON DE SALIR O ALGO MAS
+header('Location: loginFinal.php'); 
+?>
+<?php endif; ?>
 </HTML>

@@ -96,7 +96,11 @@ switch($_GET["action"]) {
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>                   
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="comprar.php">Comprar</a></li>
-                        <li><a class="btn btn-primary js-scroll-trigger" style="margin:15px" href="#">Cerrar sesión</a></li>
+                        <li><a 
+                        id="botonCerrarSesion"
+                        style = "visibility:    hidden"
+                        class="btn btn-primary js-scroll-trigger"
+                         style="margin:15px" href="salir.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -215,9 +219,9 @@ if (isset($_SESSION['user_id'])) :
   
     document.getElementById("status").innerHTML=
     "Sesion Abierta! "
-
-
     ;
+
+    document.getElementById("botonCerrarSesion").style.visibility = "visible";
  
     </script>';
    
