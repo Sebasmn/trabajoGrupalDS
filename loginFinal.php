@@ -25,17 +25,36 @@ if (!isset($_SESSION['user_id'])) :
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
 
+
+   
+
     
     <script src="js/validarCedula.js"></script>
 </head>
 
 <body >
-   
+
 
     
     <div class="login-wrap">
+        
         <div class="login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
+        <input id="tab-3"
+        
+             type="radio" name="tab"
+              class="sign-in" ><label for="tab-3" class="tab" >
+              <a
+              href="index.php" >  
+              Home
+                    </a>
+                </label>
+
+
+
+
+            <input id="tab-1"
+             type="radio" name="tab"
+              class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" onclick="mostrar()">Registrarse</label>
             
             <div class="login-form">
