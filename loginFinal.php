@@ -24,6 +24,8 @@ if (!isset($_SESSION['user_id'])) :
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
+
+   
     <script src="js/validarCedula.js"></script>
 </head>
 
@@ -44,7 +46,9 @@ if (!isset($_SESSION['user_id'])) :
                         <label for="cedula" class="label">Cedula</label>
                         <input  required=true
                         name="cedula"
-                        id="cedula" type="text" class="input">
+                        id="cedula" 
+                        type="number"
+                         class="input">
                     </div>
                     <div class="group">
                         <label for="claveLog" class="label">Clave de Acceso</label>
@@ -170,6 +174,9 @@ if (!isset($_SESSION['user_id'])) :
 
 
 </body>
+
+
+
 <?php else:  
 
 //METER AQUI EL BOTON DE SALIR O ALGO MAS

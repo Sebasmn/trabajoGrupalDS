@@ -1,19 +1,16 @@
+//
+
+// Disable Mouse scrolling
+
+//
 document.getElementById("myMap").style.display = "none";
 function validar(){
   var cedula = document.getElementById("cedulaR").value;
   var cadena= cedula.split("");
-  if( (
-    cadena.includes(0)  ||
-  cadena.includes(1) ||
-  cadena.includes(2)  ||
-  cadena.includes(3) ||
-  cadena.includes(4) ||
-  cadena.includes(5) ||
-  cadena.includes(6) ||
-  cadena.includes(7) ||
-  cadena.includes(8) ||
-  cadena.includes(9)
-  )
+  $bool =  cadena.some(isNan);
+  alert($bool);
+  if(   
+   true
   ){ 
     var provincia =  cedula[0].toString() +  cedula[1].toString();
     var n = parseInt(provincia);
