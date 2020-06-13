@@ -150,14 +150,14 @@ if (!isset($_SESSION['user_id'])) :
                         <input name="direccionLAT"
                           required="true"
                         id="direccionLAT" 
-                      
+                        type='hidden'
                          class="input">
                     </div>
                     <div class="group">
                         <input name="direccionLON"
                           required="true"
                         id="direccionLON" 
-                        
+                        type='hidden'
                          class="input">
                     </div>
 

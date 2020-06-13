@@ -35,8 +35,20 @@ function validarRegistro(){
              var claveR = document.getElementById("claveR").value;
             //CLAVES COINCIDAN
             if ( clave2== claveR){
-              document.getElementById("formulario").submit();
-              return true;
+              var direccionLAT = document.getElementById("direccionLAT").value;
+              var direccionLON = document.getElementById("direccionLON").value;
+              if(
+                direccionLAT!=null && direccionLON != null
+              ){
+                document.getElementById("formulario").submit();
+                return true;
+
+              }else{
+                alert('Selecciona una ubicacion en el mapa..');
+                 document.getElementById("myMap").focus();
+                 return false;
+              }
+      
             }else{
               alert('Contraseñas no coinciden ');
               document.getElementById("clave2").value="";
