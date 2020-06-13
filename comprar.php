@@ -179,7 +179,7 @@ if(isset($_SESSION["cart_item"])){
 <div id="product-grid">
 	<div class="txt-heading" style="color:white">Medicamentos</div>
 	<?php
-	$product_array = $db_handle->runQuery("SELECT * FROM productos ORDER BY ID ASC");
+	$product_array = $db_handle->runQuery("SELECT * FROM productos ORDER BY CODIGO ASC");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
