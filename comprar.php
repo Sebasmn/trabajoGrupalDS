@@ -234,7 +234,7 @@ if (isset($_SESSION['user_id'])) :
 
 	if(isset($_SESSION['rol'])	&&	$_SESSION['rol']==1){
 		echo'<script type="text/javascript">
-		document.getElementById("botonAdmin	").style.visibility = "visible";
+		document.getElementById("botonAdmin").style.visibility = "visible";
 		</script>';
 	}
 
