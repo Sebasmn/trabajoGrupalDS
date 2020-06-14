@@ -7,7 +7,7 @@ use Dompdf\Dompdf;
 
 
 
- $html=file_get_contents_curl("http://localhost:8080/repositorio1/trabajoGrupalDS/misDatospdf.php");
+ $html=file_get_contents_curl("http://localhost:8080/repositorio1/trabajoGrupalDS/misDatosPdf.php");
 
 
  
@@ -25,11 +25,12 @@ $pdf->load_html(utf8_decode($html));
 $pdf->render();
  
 // Enviamos el fichero PDF al navegador.
-//$pdf->stream('reportePdf.pdf');
-//$pdf->stream('my.pdf',array('Attachment'=>0))
-$rutaGuardado = "C:/xampp/htdocs/Repositorio1/trabajoGrupalDS/documentos/doc";
+//$pdf->stream('facturaElectronica.pdf');
+$pdf->stream('reportePdf.pdf');
+//$pdf->stream('facturaElectronica.pdf',array('Attachment'=>0))
+/*$rutaGuardado = "C:/xampp/htdocs/Repositorio1/trabajoGrupalDS/documentos/doc";
 $output = $pdf->output();
-file_put_contents( $rutaGuardado."ejemplo3.pdf", $output);
+file_put_contents( $rutaGuardado."ejemplo3.pdf", $output);*/
 
 function file_get_contents_curl($url) {
 	$crl = curl_init();

@@ -1,7 +1,13 @@
 
 <?php 
         require 'conexion.php'; 
-
+        session_start();
+        if (isset($_SESSION['CED_CLIENTE'])) :
+            $cedGlobal = $_SESSION['CED_CLIENTE'];
+            echo "<script type='text/javascript'>
+                alert('$cedGlobal');
+            </script>";
+        endif;
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +29,7 @@
     <center>
     <br>
     <form  method="post" class = "form_search">
-        <input type="text" name="busqueda" id="busqueda" placeholder="Buscar"   >
+        <input type="text" name="busqueda" id="busqueda" placeholder="Buscarsdad"   >
         <input type="submit" value="Buscar" class="btn_search">
     </form>
 
