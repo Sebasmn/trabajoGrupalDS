@@ -2,6 +2,7 @@
 <?php 
     $conexion = mysqli_connect('bqejlphwelhmqmqkgixg-mysql.services.clever-cloud.com','uf1l6xcn5mhhk7sm','S3YIznA9DyhJzOcS6JIm','bqejlphwelhmqmqkgixg');
     session_start();
+   
     if ($_SESSION['rol'] == 1):
 ?>
 <!DOCTYPE html>
@@ -66,7 +67,7 @@
     <center>
     <br>
     <form  method="post" class = "form_search">
-        <input type="text" name="busqueda" id="busqueda" placeholder="Buscar"   >
+        <input type="text" value="" name="busqueda" id="busqueda" placeholder="Buscar"   >
         <input type="submit" value="Buscar" class="btn_search">
     </form>
 
@@ -88,8 +89,13 @@
         </thead>
         
         <?php 
-            
-            $busqueda = $_POST['busqueda'];
+
+            if(isset($_POST['busqueda'])){
+               
+                $busqueda= $_POST['busqueda'];
+            }else{
+                $busqueda="";
+            }
             $sql = "SELECT * FROM vista_Factura  WHERE IDFACTURA LIKE '%$busqueda%' ";
             $result = mysqli_query($conexion,$sql);
             // Conteo de usuarios
