@@ -1,4 +1,6 @@
 <?php 
+$conexion1 = mysqli_connect('bqejlphwelhmqmqkgixg-mysql.services.clever-cloud.com','uf1l6xcn5mhhk7sm','S3YIznA9DyhJzOcS6JIm','bqejlphwelhmqmqkgixg');
+
 
 require 'conexion.php'; 
 session_start();
@@ -176,7 +178,7 @@ if(isset($_SESSION["cart_item"])){
 ?>
 <a id="btnEmpty" href="#openmodal1" >Comprar</a>
 
-<section id="openmodal1">
+	<section id="openmodal1">
 	<div class="content-modal1">
 	<br>	
 	
@@ -186,7 +188,7 @@ if(isset($_SESSION["cart_item"])){
 		<div class="buttons">
 		<br>
 		<a id="ok" href="#openmodal" >COMPRAR
-			
+		
 		</a>&nbsp;
 		<a id="ko" href="#close" >VOLVER</a>&nbsp;
 			
@@ -194,9 +196,10 @@ if(isset($_SESSION["cart_item"])){
 	</div>
 </section>
 
+
+
 <<section id="openmodal" class="modalDialog">
-				<div class="content-modal" >
-				<a href="#close" class="close"> X </a>
+				<div class="content-modal" >		<a href="#close" class="close"> X </a>
 				<section id="padre">
             <div id="caja1"></div>
 
@@ -205,20 +208,40 @@ if(isset($_SESSION["cart_item"])){
                     <p>FARMACIA DS3</p>
                 </div>
             <br>
-            
+			
+			
+			
 			<?php 
+
+
+		
+
+
             $records = $conn->prepare("SELECT * FROM usuarios 
             WHERE   CEDULA = :cedula "   );
             $records->bindParam(':cedula', $cedGlobal);
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
             $cd = $results['ID'];         
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
-			$records1 = $conn->prepare("SELECT * FROM detallefactura" );
-            
-            $records1->execute();
-            $results1 = $records->fetch(PDO::FETCH_ASSOC);
-            
+			$sql = $conn->prepare("INSERT INTO maestrofactura 
+			(FECHA,IDCLIENTE,TOTAL,DIRECCIONLAT,
+			DIRECCIONLON) 
+			 VALUES(:FECHA,
+			:IDCLIENTE,
+			:TOTAL,
+			:DIRECCIONLAT,
+			:DIRECCIONLON);"); 
+		
+		$sql->execute([
+		  'FECHA' => '1999/1/1',
+		  'IDCLIENTE' =>$results['ID'],
+		  'TOTAL' => 150,
+		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
+		  'DIRECCIONLON' => $results['DIRECCIONLON'],
+		]);
+
 		?>
         
             <p style="margin-left: 39%;">NOMBRE : <?php echo $results['NOMBRE']?> </p>
@@ -226,39 +249,45 @@ if(isset($_SESSION["cart_item"])){
             <p style="margin-left: 40%;">CEDULA : <?php echo $results['CEDULA']?></p>
             <P style="margin-left: 37%;">TELEFONO : <?php echo $results['TELEFONO']?></P>
 			<P style="margin-left: 23%;">CORREO ELECTRONICO : <?php echo $results['email']?></P>
+			
 
 			
 			<!--<hr color="blue" size=3> -->
 			<hr color="#44A3A3">
-			
-			<table class="table">
-			<thead>
-			<tr style="text-align: center">
-				<th >
-					NOMBRE
-				</th>
-				<th>
-					CANTIDAD
-				</th>
-				<th>
-					SUBTOTAL
-				</th>
-			</tr>
-			<tbody id="datitos">
-			<?php
-			foreach($results as $row){?>
-			<tr>
-				<td><?php echo $row[IDPRODUCTO]?> </td>
-				<td><?php echo $row[CANTIDAD]?></td>
-				<td><?php echo $row[PRECIO]?></td>
-			</tr>
-			</tbody>
-			<?php
-			}
-			?>
-			</thead>
-			</table>
-			<br> 
+			<table class="table " >
+        <thead>
+            <tr style="text-align: center;">
+                <th field="idfactura" >NOMBRE</th>
+                <th field="idcliente" >CANTIDAD</th>
+                <th field="fecha">SUBTOTAL</th>
+            </tr>
+            
+        </thead>
+			<?php 
+            
+            $sql = "SELECT * FROM detallefactura ";
+            $result = mysqli_query($conexion1,$sql);
+            $sentencia = "SELECT COUNT(*) AS TOTAL FROM detallefactura";
+            $conteo = mysqli_query($conexion1,$sentencia);
+            $respuesta = mysqli_fetch_assoc($conteo);
+            while ($mostrar = mysqli_fetch_array($result)) {    
+        ?>
+        
+        <tr style="text-align: center;">
+            <td> <?php echo $mostrar['IDPRODUCTO']?></td>
+            <td> <?php echo $mostrar['PRECIO']?></td>
+			<td> <?php echo $mostrar['SUBTOTAL']?></td>
+			<br>
+        </tr>
+        
+            <?php 
+            }?>
+    </table>
+			<label id="tot" style="margin-left:60%"> <p>TOTAL :</p>  </label>
+
+
+			<br>
+
 			<hr color="#44A3A3">
 			</div>
             
