@@ -17,43 +17,57 @@
         $records->bindParam(':clave', $_POST['claveLog']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
-      
-        if ($results &&
-        count($results['ID'])  == 1  //&& $_POST['claveLog'] = $results['CLAVE']
+    
+        //$c=count($results['ID']);
+   
+     
+       
+        if ($results
+         //&& $_POST['claveLog'] = $results['CLAVE']
           ) {
-            
+            $_SESSION['rol'] =$results['ROL'];
+            $rol =   $_SESSION['rol'] ;
             $_SESSION['user_id'] = $results['NOMBRE'];
             $usuario = $_SESSION['user_id'] ;
-            echo "<script type='text/javascript'>alert('$usuario');</script>";
-            $_SESSION['rol'] =$results['ROL'];
-           
           header('Location:  comprar.php');
            // $message2 = "Bienvenido";
         } else {
-           
             echo "<script type='text/javascript'>
             
             
-           if(!alert('Usuario no existe o contraseña incorrecta')){
-            window.location.href = 'loginFinal.php';
-           }
+            if(!alert('Usuario no existe o contraseña incorrecta')){
+             window.location.href = 'loginFinal.php';
+            }
+             
+             
+             
+             </script>";
             
-            
-            
-            </script>";
             //MOSTRA QUE NO HAY RESULTADOS
          //   header('Location:  loginFinal.php');
         }
     }else{
-        $message = 'Campos vacios';
+       // $message = 'Campos vacios';
         //MOSTRAR QUE HA COMETIDO ERRORES
-        echo "<script type='text/javascript'>
+       
+        // header('Location:  loginFinal.php');
+        if (isset($_SESSION['user_id'])) {
+            header('Location:  loginFinal.php');
+       
+        }else{
+           if(!$_POST['cedula']){
+            header('Location:  loginFinal.php');
         
+        }else{
+        echo "<script type='text/javascript'>
+
         if(!alert('Usuario no existe o contraseña incorrecta')){
             window.location.href = 'loginFinal.php';
            }
         
         </script>";
+        }
+    }
     }
     
 ?> 

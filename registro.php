@@ -22,7 +22,8 @@ $EMAIL = $_POST['email'];
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
     if (
-    count($results['ID']) == 0 
+    //count($results['ID']) == 0  CAMBIAR MYSQL CONFIG PARA QUE VALGA
+    !$results
     ) {
     try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
