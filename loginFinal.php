@@ -20,15 +20,10 @@ if (!isset($_SESSION['user_id'])) :
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="prueba.css">
+    <link rel="stylesheet" type="text/css" href="css/prueba.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
-
-
-   
-
-    
     <script src="js/validarCedula.js"></script>
 </head>
 
