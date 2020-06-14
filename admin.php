@@ -89,10 +89,10 @@
         <?php 
             
             $busqueda = $_POST['busqueda'];
-            $sql = "SELECT * FROM maestrofactura WHERE IDFACTURA LIKE '%$busqueda%' ";
+            $sql = "SELECT * FROM vista_Factura  WHERE IDFACTURA LIKE '%$busqueda%' ";
             $result = mysqli_query($conexion,$sql);
             // Conteo de usuarios
-            $sentencia = "SELECT COUNT(IDFACTURA) AS TOTAL FROM maestrofactura";
+            $sentencia = "SELECT COUNT(IDFACTURA) AS TOTAL FROM vista_Factura";
             $conteo = mysqli_query($conexion,$sentencia);
             $respuesta = mysqli_fetch_assoc($conteo);
             while ($mostrar = mysqli_fetch_array($result)) {
