@@ -228,5 +228,5 @@ header('Location: comprar.php');
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin="">
 </script>
-   <script src="map.js"></script>
+   <script src="js/map.js"></script>
 </html>
