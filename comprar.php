@@ -213,27 +213,12 @@ if(isset($_SESSION["cart_item"])){
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
             $cd = $results['ID'];         
-
-
-
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = $conn->prepare("  INSERT INTO maestrofactura 
-			(FECHA,IDCLIENTE,TOTAL,DIRECCIONLAT,
-			DIRECCIONLON) 
-			 VALUES(:FECHA,
-			:IDCLIENTE,
-			:TOTAL,
-			:DIRECCIONLAT,
-			:DIRECCIONLON);"); 
-		
-		$sql->execute([
-		  'FECHA' => curdate(),
-		  'IDCLIENTE' =>$results['ID'],
-		  'TOTAL' => $total_price,
-		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
-		  'DIRECCIONLON' => $results['DIRECCIONLON'],
-		]);
-		
+			
+			$records1 = $conn->prepare("SELECT * FROM detallefactura" );
+            
+            $records1->execute();
+            $results1 = $records->fetch(PDO::FETCH_ASSOC);
+            
 		?>
         
             <p style="margin-left: 39%;">NOMBRE : <?php echo $results['NOMBRE']?> </p>
@@ -245,7 +230,34 @@ if(isset($_SESSION["cart_item"])){
 			
 			<!--<hr color="blue" size=3> -->
 			<hr color="#44A3A3">
-			<!-- AQUI VA LA TABLA-->
+			
+			<table class="table">
+			<thead>
+			<tr style="text-align: center">
+				<th >
+					NOMBRE
+				</th>
+				<th>
+					CANTIDAD
+				</th>
+				<th>
+					SUBTOTAL
+				</th>
+			</tr>
+			<tbody id="datitos">
+			<?php
+			foreach($results as $row){?>
+			<tr>
+				<td><?php echo $row[IDPRODUCTO]?> </td>
+				<td><?php echo $row[CANTIDAD]?></td>
+				<td><?php echo $row[PRECIO]?></td>
+			</tr>
+			</tbody>
+			<?php
+			}
+			?>
+			</thead>
+			</table>
 			<br> 
 			<hr color="#44A3A3">
 			</div>
