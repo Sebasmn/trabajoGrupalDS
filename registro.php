@@ -49,8 +49,14 @@ $sql->execute([
   'DIRECCIONLON' => $DIRECCIONLON,
   'CLAVE' =>$CLAVE,
 ]);
+
+
+$ultimo =  $conn->lastInsertId();
+
+
     //$conn->exec($sql);
     $_SESSION['user_id'] = $NOMBRE;
+
     //
     $records = $conn->prepare('SELECT * FROM usuarios
       WHERE CEDULA=:cedula');
@@ -60,9 +66,10 @@ $sql->execute([
     //
     $_SESSION['rol'] =$results['ROL'];
     $rol = $_SESSION['rol'];
+
     $_SESSION['CED_CLIENTE'] =$results['CEDULA'];
     $usuario = $_SESSION['user_id'] ;
-    header('Location:  comprar.php');
+   header('Location:  comprar.php');
     
   } catch(PDOException $e) {
     //echo $e->getMessage();
