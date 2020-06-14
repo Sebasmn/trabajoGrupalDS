@@ -1,7 +1,8 @@
 
 <?php 
     $conexion = mysqli_connect('bqejlphwelhmqmqkgixg-mysql.services.clever-cloud.com','uf1l6xcn5mhhk7sm','S3YIznA9DyhJzOcS6JIm','bqejlphwelhmqmqkgixg');
-
+    session_start();
+    if ($_SESSION['rol'] == 1):
 ?>
 <!DOCTYPE html>
 <html lang="es" >
@@ -161,3 +162,7 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<?php
+    else: header('Location:  index.php');
+    endif;
+?>
