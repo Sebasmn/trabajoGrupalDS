@@ -26,7 +26,7 @@
          //&& $_POST['claveLog'] = $results['CLAVE']
           ) {
             $_SESSION['rol'] =$results['ROL'];
-            $_SESSION['ID_CLIENTE'] =$results['ID'];
+            $_SESSION['CED_CLIENTE'] =$results['CEDULA'];
             $rol =   $_SESSION['rol'] ;
             $_SESSION['user_id'] = $results['NOMBRE'];
             $usuario = $_SESSION['user_id'] ;

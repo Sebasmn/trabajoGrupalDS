@@ -1,7 +1,13 @@
 <?php 
 
 session_start();
-
+if (isset($_SESSION['CED_CLIENTE'])) :
+	$cedGlobal = $_SESSION['CED_CLIENTE'];
+	echo "<script type='text/javascript'>
+		alert('$cedGlobal');
+	</script>";
+    
+endif;
 
 if (isset($_SESSION['user_id'])) :
     # code...
