@@ -102,9 +102,11 @@
         
         <tr>
             <td> <?php echo $mostrar['IDFACTURA']?></td>
-            <td> <?php echo $mostrar['IDCLIENTE']?></td>
             <td> <?php echo $mostrar['FECHA']?></td>
-            <td> <?php echo $mostrar['TOTAL']?></td>
+            <td> <?php echo $mostrar['CEDULA']?></td>
+            <td> <?php echo $mostrar['NOMBRE']?></td>
+            <td> <?php echo $mostrar['APELLIDO']?></td>
+            td> <?php echo $mostrar['TOTAL']?></td>
         </tr>
         
             <?php 
