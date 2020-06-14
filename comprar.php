@@ -5,15 +5,8 @@ session_start();
 
 if (isset($_SESSION['user_id'])) :
     # code...
- /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/    
- 
     echo'<script type="text/javascript">
-   
-    
- 
     </script>';
-
-    //carrito
     
 require_once("dbcontroller.php");
 $db_handle = new DBController();
@@ -22,7 +15,8 @@ switch($_GET["action"]) {
 	case "add":
 		if(!empty($_POST["quantity"])) {
 			$productByCode = $db_handle->runQuery("SELECT * FROM productos WHERE CODIGO='" . $_GET["code"] . "'");
-			$itemArray = array($productByCode[0]["CODIGO"]=>array('NOMBRE'=>$productByCode[0]["NOMBRE"], 'CODIGO'=>$productByCode[0]["CODIGO"], 'quantity'=>$_POST["quantity"], 'PRECIO'=>$productByCode[0]["PRECIO"], 'IMAGEN'=>$productByCode[0]["IMAGEN"]));
+			$itemArray = array($productByCode[0]["CODIGO"]=>array('NOMBRE'=>$productByCode[0]["NOMBRE"], 'CODIGO'=>$productByCode[0]["CODIGO"], 
+			'quantity'=>$_POST["quantity"], 'PRECIO'=>$productByCode[0]["PRECIO"], 'IMAGEN'=>$productByCode[0]["IMAGEN"]));
 			
 			if(!empty($_SESSION["cart_item"])) {
 				if(in_array($productByCode[0]["CODIGO"],array_keys($_SESSION["cart_item"]))) {
