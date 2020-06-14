@@ -185,7 +185,9 @@ if(isset($_SESSION["cart_item"])){
 	<br>
 		<div class="buttons">
 		<br>
-		<a id="ok" href="#openmodal" >COMPRAR</a>&nbsp;
+		<a id="ok" href="#openmodal" >COMPRAR
+			
+		</a>&nbsp;
 		<a id="ko" href="#close" >VOLVER</a>&nbsp;
 			
 		</div>
@@ -211,13 +213,36 @@ if(isset($_SESSION["cart_item"])){
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
             $cd = $results['ID'];         
-        ?>
+
+
+
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = $conn->prepare("  INSERT INTO maestrofactura 
+			(FECHA,IDCLIENTE,TOTAL,DIRECCIONLAT,
+			DIRECCIONLON) 
+			 VALUES(:FECHA,
+			:IDCLIENTE,
+			:TOTAL,
+			:DIRECCIONLAT,
+			:DIRECCIONLON);"); 
+		
+		$sql->execute([
+		  'FECHA' => curdate(),
+		  'IDCLIENTE' =>$results['ID'],
+		  'TOTAL' => $total_price,
+		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
+		  'DIRECCIONLON' => $results['DIRECCIONLON'],
+		]);
+		
+		?>
         
             <p style="margin-left: 39%;">NOMBRE : <?php echo $results['NOMBRE']?> </p>
             <p style="margin-left: 38%;">APELLIDO : <?php echo $results['APELLIDO']?></p>
             <p style="margin-left: 40%;">CEDULA : <?php echo $results['CEDULA']?></p>
             <P style="margin-left: 37%;">TELEFONO : <?php echo $results['TELEFONO']?></P>
 			<P style="margin-left: 23%;">CORREO ELECTRONICO : <?php echo $results['email']?></P>
+
+			
 			<!--<hr color="blue" size=3> -->
 			<hr color="#44A3A3">
 			<!-- AQUI VA LA TABLA-->
