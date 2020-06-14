@@ -167,7 +167,7 @@ if(isset($_SESSION["cart_item"])){
 }
 
 ?>
-<a id="btnEmpty" href="#">Comprar</a>
+<a id="btnEmpty" href="crearPdf.php" >Comprar</a>
 </div>
 <br>
 <div id="product-grid">
