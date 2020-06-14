@@ -45,7 +45,7 @@
                 <th field="nombre" width="50">Nombre</th>
                 <th field="apellido" width="50">Apellido</th>
                 <th field="correo" width="50">Correo</th>
-                <th field="clave" width="50">Contraseña</th>
+                <th field="clave" width="50">Contraseñadfdf</th>
             </tr>
             
         </thead>
@@ -53,18 +53,21 @@
         <?php 
             $records = $conn->prepare("SELECT * FROM usuarios 
             WHERE   CEDULA = :cedula "   );
-
-            $f= $_POST['busqueda'];
-            $records->bindParam(':cedula', $_POST['busqueda']);
+             $records->bindParam(':cedula', $cedGlobal);
+ 
             $records->execute();
             $results = $records->fetch(PDO::FETCH_ASSOC);
             $cd = $results['ID'];
-//
+//          
+$records1 = $conn->prepare("SELECT * FROM detallefactura");
+$records1->execute();
+$results1 = $records1->fetch(PDO::FETCH_ASSOC);
+
 
 //
        
             foreach ( 
-                $results as //$fila => $r
+                $results1 as //$fila => $r
                 $valor
              ) {
            // $mostrar = mysqli_fetch_array($result)
@@ -74,11 +77,9 @@
         ?>
         
         <tr>
-            <td> <?php echo $results['ID']?></td>
-            <td> <?php echo $results['NOMBRE']?></td>
-            <td> <?php echo $results['APELLIDO']?></td>
-            <td> <?php echo $results['CEDULA']?></td>
-            <td> <?php echo $results['email']?></td>
+            <td> <?php echo $results1['IDPRODUCTO']?></td>
+            <td> <?php echo $results1['CANTIDAD']?></td>
+            <td> <?php echo $results1['PRECIO']?></td>
         </tr>
         
             <?php 

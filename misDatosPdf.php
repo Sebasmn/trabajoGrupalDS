@@ -4,9 +4,9 @@
         session_start();
         if (isset($_SESSION['CED_CLIENTE'])) :
             $cedGlobal = $_SESSION['CED_CLIENTE'];
-           /* echo "<script type='text/javascript'>
+            echo "<script type='text/javascript'>
                 alert('$cedGlobal');
-            </script>";*/
+            </script>";
         endif;
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/estilofactura1.css">
 </head>
 <body>
-<section id="padre">
+	<section id="padre">
             <div id="caja1"></div>
 
             <div id="caja2">
@@ -51,9 +51,10 @@
             
             
 		 </section>
-		 
+		 <a href="" class="guardar"> GUARDAR  PDF</a>
 				</div>
 		</section>
+</div>
 
          
             
