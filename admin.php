@@ -79,9 +79,10 @@
         <thead>
             <tr>
                 <th field="idfactura" width="50">ID FACTURA</th>
-                <th field="idcliente" width="50">ID CLIENTE</th>
-                <th field="fecha" width="50">FECHA</th>
+                <th field="cedula" width="50">CEDULA</th>
+                <th field="nombre" width="50">NOMBRE</th>
                 <th field="total" width="50">TOTAL</th>
+                <th field="fecha" width="50">FECHA</th>
             </tr>
             
         </thead>
@@ -102,11 +103,10 @@
         
         <tr>
             <td> <?php echo $mostrar['IDFACTURA']?></td>
-            <td> <?php echo $mostrar['FECHA']?></td>
             <td> <?php echo $mostrar['CEDULA']?></td>
-            <td> <?php echo $mostrar['NOMBRE']?></td>
-            <td> <?php echo $mostrar['APELLIDO']?></td>
-            td> <?php echo $mostrar['TOTAL']?></td>
+            <td> <?php echo $mostrar['NOMBRE']. "  " .$mostrar['APELLIDO'] ?></td>
+           <td> <?php echo $mostrar['TOTAL']?></td>
+           <td> <?php echo $mostrar['FECHA']?></td>
         </tr>
         
             <?php 
