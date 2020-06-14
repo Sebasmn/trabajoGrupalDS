@@ -64,16 +64,29 @@
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
             <br>
-    <center>
+   
     <br>
-    <form  method="post" class = "form_search">
-        <input type="text" value="" name="busqueda" id="busqueda" placeholder="Buscar"   >
+    <div>
+    <form 
+    style="margin-left:420px;
+    margin-top:-200px;
+        float:left;
+        position:relative;"
+         method="post" class = "form_search">
+        <input type="text" 
+      
+        value="" name="busqueda" id="busqueda" placeholder="Buscar por Cedula/Nombre o ID"   >
         <input type="submit" value="Buscar" class="btn_search">
     </form>
+</div>
 
-    <br>
-
-    <table id="dg" title="My Users" class="easyui-datagrid" style="width:700px;height:250px"
+<div style="position: absolute;
+      margin-top:10px;
+      margin-left:220px;
+    ">
+    <table
+   
+     id="dg" title="Facturas" class="easyui-datagrid" style="width:700px;height:250px"
             
              pagination="true"
             rownumbers="true" fitColumns="true" singleSelect="true">
@@ -96,7 +109,13 @@
             }else{
                 $busqueda="";
             }
-            $sql = "SELECT * FROM vista_Factura  WHERE IDFACTURA LIKE '%$busqueda%' ";
+            $sql = "SELECT * FROM vista_Factura  WHERE
+             CEDULA LIKE '%$busqueda%' OR
+             NOMBRE LIKE '%$busqueda%'  OR 
+             APELLIDO LIKE '%$busqueda%' OR
+             IDFACTURA LIKE '%$busqueda%' 
+             
+             ORDER BY IDFACTURA";
             $result = mysqli_query($conexion,$sql);
             // Conteo de usuarios
             $sentencia = "SELECT COUNT(IDFACTURA) AS TOTAL FROM vista_Factura";
@@ -119,18 +138,11 @@
             }?>
     </table>
 
-
-    <div >
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">New User</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Edit User</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Remove User</a>
-    </div>
+</div>
+   
     
 
-    <div id="dlg-buttons">
-        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Save</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
-    </div>
+    
     <script type="text/javascript">
         var url;
         function newUser(){
@@ -152,7 +164,7 @@
             
     <br>
 
-    </center>
+ 
             </div>
         </header>
         
