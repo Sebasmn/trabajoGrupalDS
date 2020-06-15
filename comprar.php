@@ -198,11 +198,8 @@ if(isset($_SESSION["cart_item"])){
 
 ?>
 
-<a id="btnEmpty" 
-href="#openmodal1"
-
- >Comprar</a>
-
+<a id="btnEmpty" href="#openmodal1">Comprar</a>
+<!-- AQUI VA EL BDMAESTRO-->
 	<section 
 	
 	id="openmodal1">
@@ -215,6 +212,7 @@ href="#openmodal1"
 		<div class="buttons">
 		<br>
 		<a id="ok" href="#openmodal" >COMPRAR
+		<!-- AQUI VA EL BDDETALLE-->
 		
 		</a>&nbsp;
 		<a id="ko" href="#close" >VOLVER</a>&nbsp;
@@ -237,40 +235,6 @@ id="openmodal" class="modalDialog">
                     <p>FARMACIA DS3</p>
                 </div>
             <br>
-			
-			
-			
-			<?php 
-
-
-		
-
-
-            $records = $conn->prepare("SELECT * FROM usuarios 
-            WHERE   CEDULA = :cedula "   );
-            $records->bindParam(':cedula', $cedGlobal);
-            $records->execute();
-            $results = $records->fetch(PDO::FETCH_ASSOC);
-            $cd = $results['ID'];         
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			
-			$sql = $conn->prepare("INSERT INTO maestrofactura 
-			(FECHA,IDCLIENTE,DIRECCIONLAT,
-			DIRECCIONLON) 
-			 VALUES(:FECHA,
-			:IDCLIENTE,
-			:DIRECCIONLAT,
-			:DIRECCIONLON);"); 
-		
-		$sql->execute([
-		  'FECHA' => '1999/1/1',
-		  'IDCLIENTE' =>$results['ID'],
-		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
-		  'DIRECCIONLON' => $results['DIRECCIONLON'],
-		]);
-
-		?>
-        
             <p style="
 			font-size: 12px;
 			margin-left: 10%;">NOMBRE : <?php echo $results['NOMBRE']?> </p>
