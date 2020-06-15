@@ -259,6 +259,25 @@ id="openmodal" class="modalDialog">
 			   $results = $records->fetch(PDO::FETCH_ASSOC);
 			   $cd = $results['ID'];         
 			   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			   if(isset( $_SESSION['ULTIMO_MAESTRO'] )):
+
+				$FINAL = $_SESSION['ULTIMO_MAESTRO'];
+				echo "<script type='text/javascript'>
+			document.getElementById('verFactura').style.visibility='visible';
+	</script>";
+			else:
+				echo "<script type='text/javascript'>
+				document.getElementById('verFactura').style.visibility='hidden';
+		</script>";
+		$FINAL = null;
+			endif;
+
+			   $records5 = $conn->prepare("SELECT FECHA FROM maestrofactura WHERE IDFACTURA = '$FINAL'"  );
+			   $records5->execute();
+			   $results5 = $records5->fetch(PDO::FETCH_ASSOC);
+			   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			   $fech1=$results5['FECHA'] ;
+
 			?>
                 <div id="titulo">
                     <p>FARMACIA DS3</p>
@@ -279,6 +298,9 @@ id="openmodal" class="modalDialog">
 			<P style="
 			font-size: 12px;
 			margin-left: 10%;">CORREO ELECTRONICO : <?php echo $results['email']?></P>
+			<P style="
+			font-size: 12px;
+			margin-left: 10%;">FECHA : <?php echo $fech1?></P>
 				<!--<hr color="blue" size=3> -->
 				<hr color="#44A3A3">
 			<br>
@@ -364,7 +386,7 @@ id="openmodal" class="modalDialog">
             <?php 
             }?>
     </table>
-			<label id="tot" style="margin-left:71%"> TOTAL : <?php echo $totals?></label>
+			<label id="tot" style="margin-left:61%"> TOTAL : <?php echo $totals?></label>
 			
 			
 
