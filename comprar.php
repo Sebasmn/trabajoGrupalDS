@@ -81,13 +81,23 @@ switch($_GET["action"]) {
         <link href="css/styles.css" rel="stylesheet" />
         <link href="style.css" type="text/css" rel="stylesheet" />
 		<link rel="stylesheet" href="estilo1.css">
+		<link rel="stylesheet" type="text/css" href="css/mapa2.css">
+
+	
+
+
+
+	
+
     </head>
     <body id="page-top" style="background-color:black">
         <header class="masthead">
       
 		<!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container">
+	
+		<div class="container">
+			
                 <a  id="status"  class="navbar-brand js-scroll-trigger"  href="#page-top">
             </a>
 		
@@ -104,7 +114,9 @@ switch($_GET["action"]) {
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>                   
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="comprar.php">Comprar</a></li>
+                        <li 
+						id="botonComprar"
+						class="nav-item"><a class="nav-link js-scroll-trigger" href="comprar.php">Comprar</a></li>
 						<li><a 
                         id="botonAdmin"
                         style = "visibility:    hidden"
@@ -129,7 +141,7 @@ switch($_GET["action"]) {
         <br><br><br>
         <!-- About-->
             
-                        
+		             
 <div id="shopping-cart"> 
 
 <div class="txt-heading" style="color:white">Carrito de compras</div>
@@ -184,9 +196,15 @@ if(isset($_SESSION["cart_item"])){
 }
 
 ?>
-<a id="btnEmpty" href="#openmodal1" >Comprar</a>
 
-	<section id="openmodal1">
+<a id="btnEmpty" 
+href="#openmodal1"
+
+ >Comprar</a>
+
+	<section 
+	
+	id="openmodal1">
 	<div class="content-modal1">
 	<br>	
 	
@@ -206,7 +224,9 @@ if(isset($_SESSION["cart_item"])){
 
 
 
-<<section id="openmodal" class="modalDialog">
+<section 
+
+id="openmodal" class="modalDialog">
 				<div class="content-modal" >		<a href="#close" class="close"> X </a>
 				<section id="padre">
             <div id="caja1"></div>
@@ -252,22 +272,43 @@ if(isset($_SESSION["cart_item"])){
 
 		?>
         
-            <p style="margin-left: 39%;">NOMBRE : <?php echo $results['NOMBRE']?> </p>
-            <p style="margin-left: 38%;">APELLIDO : <?php echo $results['APELLIDO']?></p>
-            <p style="margin-left: 40%;">CEDULA : <?php echo $results['CEDULA']?></p>
-            <P style="margin-left: 37%;">TELEFONO : <?php echo $results['TELEFONO']?></P>
-			<P style="margin-left: 23%;">CORREO ELECTRONICO : <?php echo $results['email']?></P>
-			
-
-			
-			<!--<hr color="blue" size=3> -->
+            <p style="
+			font-size: 12px;
+			margin-left: 10%;">NOMBRE : <?php echo $results['NOMBRE']?> </p>
+            <p style="
+			font-size: 12px;
+			margin-left: 10%;">APELLIDO : <?php echo $results['APELLIDO']?></p>
+            <p style="
+			font-size: 12px;
+			margin-left: 10%;">CEDULA : <?php echo $results['CEDULA']?></p>
+            <P style="
+			font-size: 12px;
+			margin-left: 10%;">TELEFONO : <?php echo $results['TELEFONO']?></P>
+			<P style="
+			font-size: 12px;
+			margin-left: 10%;">CORREO ELECTRONICO : <?php echo $results['email']?></P>
+				<!--<hr color="blue" size=3> -->
 			<hr color="#44A3A3">
-			<table class="table " >
+			<table
+			style="
+			margin-top: -10%;"
+			 class="table " >
         <thead>
             <tr style="text-align: center;">
-                <th field="idfactura" >NOMBRE</th>
-                <th field="idcliente" >CANTIDAD</th>
-                <th field="fecha">SUBTOTAL</th>
+                <th 
+				style="
+			font-size: 12px;
+			margin-left: 10%;"
+			field="idfactura" >NOMBRE</th>
+                <th 
+				style="
+			font-size: 12px;
+			margin-left: 10%;"
+			field="idcliente" >CANTIDAD</th>
+                <th style="
+			font-size: 12px;
+			margin-left: 10%;"
+			 field="fecha">SUBTOTAL</th>
             </tr>
             
         </thead>
@@ -282,9 +323,21 @@ if(isset($_SESSION["cart_item"])){
         ?>
         
         <tr style="text-align: center;">
-            <td> <?php echo $mostrar['IDPRODUCTO']?></td>
-            <td> <?php echo $mostrar['PRECIO']?></td>
-			<td> <?php echo $mostrar['SUBTOTAL']?></td>
+            <td
+			style="
+			font-size: 12px;
+			margin-left: 10%;"
+			> <?php echo $mostrar['IDPRODUCTO']?></td>
+            <td
+			style="
+			font-size: 12px;
+			margin-left: 10%;"
+			> <?php echo $mostrar['PRECIO']?></td>
+			<td
+			style="
+			font-size: 12px;
+			margin-left: 10%;"
+			> <?php echo $mostrar['SUBTOTAL']?></td>
 			<br>
         </tr>
         
@@ -309,36 +362,62 @@ if(isset($_SESSION["cart_item"])){
 
 <br>
 
+
+
+			
 <br>
+
 <div id="product-grid">
 	<div class="txt-heading" style="color:white">Medicamentos</div>
 	<?php
 	$product_array = $db_handle->runQuery("SELECT * FROM productos ORDER BY CODIGO ASC");
+
+
 	if (!empty($product_array)) { 
+		echo "<script type='text/javascript'>
+        
+		document.getElementById('botonComprar').style.visibility='visible';
+		</script>";
 		foreach($product_array as $key=>$value){
 	?>
 		<div class="product-item">
-			<form method="post" action="comprar.php?action=add&code=<?php echo $product_array[$key]["CODIGO"]; ?>">
+			<form method="post" onsubmit= "return comprobarCarrito()"
+			action="comprar.php?action=add&code=<?php echo $product_array[$key]["CODIGO"]; ?>">
 			<div class="product-image"><img src="<?php echo $product_array[$key]["IMAGEN"]; ?>"></div>
 			<div class="product-tile-footer">
 			<div class="product-title"><?php echo $product_array[$key]["NOMBRE"]; ?></div>
 			<div class="product-price"><?php echo "$".$product_array[$key]["PRECIO"]; ?></div>
-			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Agregar" class="btnAddAction" /></div>
+			<div class="cart-action">
+			<input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+			<input 
+			
+			type="submit" value="Agregar" class="btnAddAction" /></div>
 			</div>
 			</form>
 		</div>
+
+
+	
+				
+
+
+
 	<?php
 		}
 	}
 	?>
 </div>
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
 		<script src="js/scripts.js"></script>
-		
+	
 
     </body>
     <?php else:  
@@ -380,4 +459,9 @@ if (isset($_SESSION['user_id'])) :
 ?>
 <?php endif; ?>
 
+				<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin="">
+</script>
+   <script src="js/map.js"></script>    
 </html>

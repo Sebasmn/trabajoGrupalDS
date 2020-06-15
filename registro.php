@@ -76,7 +76,7 @@ $ultimo =  $conn->lastInsertId();
     $msg="Errores al ingresar, por favor revise e intente de nuevo.";
     echo "<script type='text/javascript'>
         
-    if(!alert('$msg')){
+    if(!(alert'$msg')){
         window.location.href = 'loginFinal.php';
        }
     

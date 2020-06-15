@@ -1,0 +1,13 @@
+#myMap{
+	
+	width: 500px;
+	height: 300px;
+	border-color: black;
+	background-color:rgba(255,255,255,.1);
+	margin-top: -180px;
+	/*visibility: hidden;*/
+	border: 5px solid ;
+	border-color:white;
+	border-radius:25px;
+
+}
