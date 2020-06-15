@@ -206,7 +206,7 @@ if(isset($_SESSION["cart_item"])){
  >
  <a 
  
- id="verFactura" href="#openmodal">Ver Factura</a>
+ id="verFactura" href="#openmodal">Ultima Factura</a>
  <a 
  
  id="btnEmpty" href="#openmodal1">Comprar</a>

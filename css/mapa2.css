@@ -24,3 +24,16 @@
 	visibility: hidden;
 
 }
+
+#verFactura{
+	float: none;
+color: red;
+font-size: 20px;
+	margin-left: 1118px;
+	margin-bottom: -100px;
+	width: 100px;
+	height: 100px;
+	border: #B02121  2px solid;
+background-color:ghostwhite;
+
+}
