@@ -26,9 +26,10 @@
 			:IDCLIENTE,
 			:DIRECCIONLAT,
 			:DIRECCIONLON);"); 
-		
+            $fecha = date('Y/m/d');
+        
 		$sql->execute([
-		  'FECHA' => '1999/1/1',
+		  'FECHA' => $fecha,
 		  'IDCLIENTE' =>$results['ID'],
 		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
 		  'DIRECCIONLON' => $results['DIRECCIONLON'],
