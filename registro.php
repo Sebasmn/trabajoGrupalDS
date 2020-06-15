@@ -4,7 +4,7 @@
 session_start();
 //session_destroy();
 if (isset($_SESSION['user_id'])) {
-    header('Location:  comprar.php');
+    header('Location:  index.php');
 
 }else{
 $NOMBRE = $_POST['nombre'];

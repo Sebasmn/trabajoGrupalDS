@@ -30,7 +30,7 @@
             $rol =   $_SESSION['rol'] ;
             $_SESSION['user_id'] = $results['NOMBRE'];
             $usuario = $_SESSION['user_id'] ;
-          header('Location:  comprar.php');
+          header('Location:  index.php');
            // $message2 = "Bienvenido";
         } else {
             echo "<script type='text/javascript'>
