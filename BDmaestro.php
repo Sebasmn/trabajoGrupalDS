@@ -36,7 +36,7 @@
         
         $LAST_ID = $conn->lastInsertId();
         $_SESSION['ULTIMO_MAESTRO']=$LAST_ID;
-        $_SESSION['IDFINAL'] =$conn->lastInsertId();
+        
 
        /* echo "<script type='text/javascript'>
 
