@@ -117,7 +117,7 @@ switch($_GET["action"]) {
                         style = "visibility:    hidden"
                         class="btn btn-primary js-scroll-trigger"
                          style="margin:15px"
-						  href="login.php">
+						  href="salir.php">
 						 Cerrar sesión
 						 </a></li>
 						 
