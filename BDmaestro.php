@@ -79,4 +79,5 @@ alert('Ingresado con exito!');
 </script>";
 $_SESSION['cart_item']=null;
 header('Location:  index.php');
+$conn=null;
 ?>

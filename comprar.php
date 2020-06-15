@@ -10,7 +10,7 @@ if (isset($_SESSION['CED_CLIENTE'])) :
 		alert('$cedGlobal');
 	</script>";*/
 endif;
-$aqw = $_SESSION['ULTIMO_MAESTRO'];
+//$aqw = $_SESSION['ULTIMO_MAESTRO'];
 /*echo "<script type='text/javascript'>
 	alert('$aqw');
 </script>";*/
@@ -308,9 +308,9 @@ id="openmodal" class="modalDialog">
             </tr>
             
         </thead>
-			<?php if(isset( $_SESSION['IDFINAL'] )):
+			<?php if(isset( $_SESSION['ULTIMO_MAESTRO'] )):
 
-				$FINAL = $_SESSION['IDFINAL'];
+				$FINAL = $_SESSION['ULTIMO_MAESTRO'];
 				echo "<script type='text/javascript'>
 			document.getElementById('verFactura').style.visibility='visible';
 	</script>";
@@ -327,7 +327,8 @@ id="openmodal" class="modalDialog">
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$idMayor=$results2['NOMBRE'] ;
 
-			$records3 = $conn->prepare("SELECT SUM(SUBTOTAL) AS SUMATOTAL FROM detallefactura WHERE IDMAESTROFAC = '$aqw'"  );
+			$records3 = $conn->prepare("SELECT SUM(SUBTOTAL) AS SUMATOTAL FROM detallefactura 
+			WHERE IDMAESTROFAC = '$FINAL'"  );
 			$records3->execute();
 			$results3 = $records3->fetch(PDO::FETCH_ASSOC);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
