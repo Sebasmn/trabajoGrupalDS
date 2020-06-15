@@ -146,7 +146,7 @@ switch($_GET["action"]) {
         <!-- About-->
 		
 <div id="shopping-cart"> 
-<div class="txt-heading" style="color:white">Selecciona direccion de entrega</div>
+<div class="txt-heading" style="color:white">Selecciona dirección de entrega</div>
 <div>
 <center>
 <?php include 'mapaux.php';?>
