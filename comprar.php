@@ -254,18 +254,16 @@ id="openmodal" class="modalDialog">
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
 			$sql = $conn->prepare("INSERT INTO maestrofactura 
-			(FECHA,IDCLIENTE,TOTAL,DIRECCIONLAT,
+			(FECHA,IDCLIENTE,DIRECCIONLAT,
 			DIRECCIONLON) 
 			 VALUES(:FECHA,
 			:IDCLIENTE,
-			:TOTAL,
 			:DIRECCIONLAT,
 			:DIRECCIONLON);"); 
 		
 		$sql->execute([
 		  'FECHA' => '1999/1/1',
 		  'IDCLIENTE' =>$results['ID'],
-		  'TOTAL' => 150,
 		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
 		  'DIRECCIONLON' => $results['DIRECCIONLON'],
 		]);
