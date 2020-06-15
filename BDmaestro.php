@@ -7,9 +7,7 @@
      //NO TE OLVIDARAS LA DIREC
      if (isset($_SESSION['CED_CLIENTE'])) :
          $cedGlobal = $_SESSION['CED_CLIENTE'];
-         echo "<script type='text/javascript'>
-             alert('$cedGlobal');
-         </script>";
+       
      endif;
             $records = $conn->prepare("SELECT * FROM usuarios 
             WHERE   CEDULA = :cedula "   );
@@ -75,4 +73,9 @@ $sql->execute([
 			
 endforeach;
 
+echo "<script type='text/javascript'>
+alert('Ingresado con exito!');
+</script>";
+$_SESSION['cart_item']=null;
+header('Location:  index.php');
 ?>

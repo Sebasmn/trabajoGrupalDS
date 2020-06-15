@@ -197,7 +197,15 @@ if(isset($_SESSION["cart_item"])){
 }
 
 ?>
-<form action ="BDmaestro.php" ><button type="submit"id="btnEmpty" href="#openmodal1">Comprar</button>
+<form
+
+ >
+ <a 
+ 
+ id="verFactura" href="#openmodal">Ver Factura</a>
+ <a 
+ 
+ id="btnEmpty" href="#openmodal1">Comprar</a>
 <!--<a href="#openmodal1">Comprar</a>-->
 <!-- AQUI VA EL BDMAESTRO-->
 </form>
@@ -211,8 +219,16 @@ if(isset($_SESSION["cart_item"])){
 	<br>
 		<div class="buttons">
 		<br>
-		
-<a href="#openmodal" id="ok" >COMPRAR</a>
+				<form
+		action ="BDmaestro.php" >
+		<button type="submit"id="ok" href="#openmodal1">Comprar</button>
+		<!--<a href="#openmodal1">Comprar</a>-->
+		<!-- AQUI VA EL BDMAESTRO-->
+		</form>
+
+
+
+<!-- <a href="#openmodal" id="ok" >COMPRAR</a> -->
 <!-- AQUI VA EL BDMAESTRO-->
 </form>&nbsp;
 		<a id="ko" href="#close" >VOLVER</a>&nbsp;
@@ -288,7 +304,19 @@ id="openmodal" class="modalDialog">
             </tr>
             
         </thead>
-			<?php 
+			<?php if(isset( $_SESSION['IDFINAL'] )):
+
+				$FINAL = $_SESSION['IDFINAL'];
+				echo "<script type='text/javascript'>
+			document.getElementById('verFactura').style.visibility='visible';
+	</script>";
+			else:
+				echo "<script type='text/javascript'>
+				document.getElementById('verFactura').style.visibility='hidden';
+		</script>";
+		$FINAL = null;
+			endif;
+			 
             $records2 = $conn->prepare("SELECT MAX(IDFACTURA) AS NOMBRE FROM maestrofactura "   );
 			$records2->execute();
 			$results2 = $records2->fetch(PDO::FETCH_ASSOC);
@@ -301,7 +329,7 @@ id="openmodal" class="modalDialog">
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$totals=$results3['SUMATOTAL'] ;
 
-            $sql = "SELECT * FROM detallefactura WHERE IDMAESTROFAC = '$idMayor'";
+            $sql = "SELECT * FROM detallefactura WHERE IDMAESTROFAC = '$FINAL'    ";
             $result = mysqli_query($conexion1,$sql);
             $sentencia = "SELECT COUNT(*)FROM detallefactura";
             $conteo = mysqli_query($conexion1,$sentencia);
@@ -452,15 +480,7 @@ if (isset($_SESSION['user_id'])) :
 </script>
    <script src="js/map.js"></script>    
    <?php  
- foreach( $_SESSION["cart_item"] as $item):
-	$item_price = $item["CODIGO"];
-	$C = $item["quantity"];
-	$P = $item["PRECIO"];
-	$N = $item["NOMBRE"];	
 
- 	
-
- endforeach;
  
 ?>
 
