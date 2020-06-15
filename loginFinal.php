@@ -212,7 +212,7 @@ if (!isset($_SESSION['user_id'])) :
 <?php else:  
 
 //METER AQUI EL BOTON DE SALIR O ALGO MAS
-header('Location: comprar.php'); 
+header('Location: index.php'); 
 ?>
 
 
