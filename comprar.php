@@ -81,18 +81,24 @@ switch($_GET["action"]) {
 		<link rel="stylesheet" href="estilo1.css">
     </head>
     <body id="page-top" style="background-color:black">
-        
         <header class="masthead">
-        <!-- Navigation-->
+      
+		<!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a 
-                id="status"
-                class="navbar-brand js-scroll-trigger" 
-                href="#page-top">
-            
-            
-            </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+                <a  id="status"  class="navbar-brand js-scroll-trigger"  href="#page-top">
+            </a>
+		
+			<button class="navbar-toggler navbar-toggler-right" 
+			type="button" data-toggle="collapse"
+			 data-target="#navbarResponsive" 
+			 aria-controls="navbarResponsive" 
+			 aria-expanded="false" aria-label="Toggle navigation">Menu
+			 <i class="fas fa-bars">
+			 </i>
+			 </button>
+
+			 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php">Inicio</a></li>                   
@@ -108,7 +114,8 @@ switch($_GET["action"]) {
                         id="botonCerrarSesion"
                         style = "visibility:    hidden"
                         class="btn btn-primary js-scroll-trigger"
-                         style="margin:15px" href="salir.php">
+                         style="margin:15px"
+						  href="login.php">
 						 Cerrar sesión
 						 </a></li>
 						 
@@ -122,6 +129,7 @@ switch($_GET["action"]) {
             
                         
 <div id="shopping-cart"> 
+
 <div class="txt-heading" style="color:white">Carrito de compras</div>
 <br><br>
 <a id="btnEmpty" href="comprar.php?action=empty">Vaciar carrito</a>

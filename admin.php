@@ -186,3 +186,29 @@
     else: header('Location:  index.php');
     endif;
 ?>
+
+
+<?php 
+
+
+if (isset($_SESSION['user_id'])) :
+    # code...
+ /*mOSTRAR BOTON DE  SALIDA AL COSTADO*/ 
+ $usuario = $_SESSION['user_id'] ;
+    echo'<script type="text/javascript">
+   
+    document.getElementById("botonCerrarSesion").style.visibility = "visible";
+    </script>';
+   
+
+	if(isset($_SESSION['rol'])	&&	$_SESSION['rol']==1){
+		echo'<script type="text/javascript">
+		document.getElementById("botonAdmin").style.visibility = "visible";
+		</script>';
+	}
+
+
+
+
+?>
+<?php endif; ?>
