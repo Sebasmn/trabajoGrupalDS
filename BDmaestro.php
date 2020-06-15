@@ -1,10 +1,6 @@
     <?php 	
 
-echo "<script type='text/javascript'>
 
-alert('SIIII');
-
-</script>";
 
      require 'conexion.php'; 
      session_start();
@@ -36,6 +32,13 @@ alert('SIIII');
 		  'IDCLIENTE' =>$results['ID'],
 		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
 		  'DIRECCIONLON' => $results['DIRECCIONLON'],
-		]);
+        ]);
+        
+        $LAST_ID = $conn->lastInsertId();
+        echo "<script type='text/javascript'>
+
+                alert('$LAST_ID');
+
+</script>";
 
 ?>
