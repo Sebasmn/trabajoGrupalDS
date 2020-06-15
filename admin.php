@@ -95,7 +95,7 @@
                 <th field="idfactura" width="50">ID FACTURA</th>
                 <th field="cedula" width="50">CEDULA</th>
                 <th field="nombre" width="50">NOMBRE</th>
-                <th field="total" width="50">TOTAL</th>
+         
                 <th field="fecha" width="50">FECHA</th>
             </tr>
             
@@ -116,6 +116,7 @@
              IDFACTURA LIKE '%$busqueda%' 
              
              ORDER BY IDFACTURA";
+
             $result = mysqli_query($conexion,$sql);
             // Conteo de usuarios
             $sentencia = "SELECT COUNT(IDFACTURA) AS TOTAL FROM vista_Factura";
@@ -130,7 +131,7 @@
             <td> <?php echo $mostrar['IDFACTURA']?></td>
             <td> <?php echo $mostrar['CEDULA']?></td>
             <td> <?php echo $mostrar['NOMBRE']. "  " .$mostrar['APELLIDO'] ?></td>
-           <td> <?php echo $mostrar['TOTAL']?></td>
+        
            <td> <?php echo $mostrar['FECHA']?></td>
         </tr>
         
