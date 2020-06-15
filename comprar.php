@@ -138,10 +138,11 @@ switch($_GET["action"]) {
             </div>
         </nav>
         <!-- Masthead-->
-        <br><br><br>
+		<br><br><br>
+		<br><br>
         <!-- About-->
-            
-		             
+		<div class="txt-heading" style="color:white">Selecciona direccion de entrega</div>
+		<?php include 'mapaux.php';           ?>  
 <div id="shopping-cart"> 
 
 <div class="txt-heading" style="color:white">Carrito de compras</div>
@@ -417,6 +418,9 @@ id="openmodal" class="modalDialog">
 		<script src="js/scripts.js"></script>
 	
 
+
+
+
     </body>
     <?php else:  
 
@@ -462,4 +466,22 @@ if (isset($_SESSION['user_id'])) :
    crossorigin="">
 </script>
    <script src="js/map.js"></script>    
+   <?php  
+ foreach( $_SESSION["cart_item"] as $item):
+	$item_price = $item["CODIGO"];
+	$C = $item["quantity"];
+	$P = $item["PRECIO"];
+	$N = $item["NOMBRE"];	
+
+ 	echo "<script type='text/javascript'>
+		alert('$item_price'+'---'+'$C'+'----'+'$P'+'------'+'$N');
+	</script>";
+
+ endforeach;
+ 
+?>
+<script>
+alert(document.getElementById("direccionLAT").value);
+</script>
+
 </html>

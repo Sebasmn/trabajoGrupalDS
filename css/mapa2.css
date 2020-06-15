@@ -1,7 +1,7 @@
 #myMap{
 	
-	width: 500px;
-	height: 300px;
+	width: 1000px;
+	height: 350px;
 	border-color: black;
 	background-color:rgba(255,255,255,.1);
 	margin-top: -180px;
@@ -9,5 +9,18 @@
 	border: 5px solid ;
 	border-color:white;
 	border-radius:25px;
+	margin-top: 100px;
+	margin-left: 150px;
+
+}
+
+
+#direccionSeleccionada{
+	float: right;
+	margin-top: 30px;
+	margin-right: 200px;
+	width: 25px;
+	height: 25px;
+	visibility: hidden;
 
 }
