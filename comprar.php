@@ -142,14 +142,17 @@ switch($_GET["action"]) {
             </div>
         </nav>
         <!-- Masthead-->
-		<br><br><br>
 		<br><br>
         <!-- About-->
-		<div class="txt-heading" style="color:white">Selecciona direccion de entrega</div>
-		<?php include 'mapaux.php';           ?>  
+		  
 <div id="shopping-cart"> 
-
-<div class="txt-heading" style="color:white">Carrito de compras</div>
+<div class="txt-heading" style="color:white">Selecciona dirección de entrega</div>
+		<center>
+		<?php 
+		include 'mapaux.php';           
+		?><center>
+		<br><br>
+<div class="txt-heading" style="color:white; text-align:left">Carrito de compras</div>
 <br><br>
 <a id="btnEmpty" href="comprar.php?action=empty">Vaciar carrito</a>
 <?php
