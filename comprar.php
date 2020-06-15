@@ -10,6 +10,10 @@ if (isset($_SESSION['CED_CLIENTE'])) :
 		alert('$cedGlobal');
 	</script>";*/
 endif;
+$aqw = $_SESSION['ULTIMO_MAESTRO'];
+/*echo "<script type='text/javascript'>
+	alert('$aqw');
+</script>";*/
 
 if (isset($_SESSION['user_id'])) :
     # code...
@@ -323,13 +327,17 @@ id="openmodal" class="modalDialog">
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$idMayor=$results2['NOMBRE'] ;
 
-			$records3 = $conn->prepare("SELECT SUM(SUBTOTAL) AS SUMATOTAL FROM detallefactura WHERE IDMAESTROFAC = '$idMayor'"  );
+			$records3 = $conn->prepare("SELECT SUM(SUBTOTAL) AS SUMATOTAL FROM detallefactura WHERE IDMAESTROFAC = '$aqw'"  );
 			$records3->execute();
 			$results3 = $records3->fetch(PDO::FETCH_ASSOC);
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$totals=$results3['SUMATOTAL'] ;
 
+<<<<<<< HEAD
             $sql = "SELECT * FROM detallefactura WHERE IDMAESTROFAC = '$FINAL'    ";
+=======
+            $sql = "SELECT * FROM detallefactura WHERE IDMAESTROFAC = '$aqw'";
+>>>>>>> 5461e0887af0c5032f49a53eeb9882f2570ccf04
             $result = mysqli_query($conexion1,$sql);
             $sentencia = "SELECT COUNT(*)FROM detallefactura";
             $conteo = mysqli_query($conexion1,$sentencia);

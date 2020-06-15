@@ -24,9 +24,10 @@
 			:IDCLIENTE,
 			:DIRECCIONLAT,
 			:DIRECCIONLON);"); 
-		
+            $fecha = date('Y/m/d');
+        
 		$sql->execute([
-		  'FECHA' => '1999/1/1',
+		  'FECHA' => $fecha,
 		  'IDCLIENTE' =>$results['ID'],
 		  'DIRECCIONLAT' =>$results['DIRECCIONLAT'],
 		  'DIRECCIONLON' => $results['DIRECCIONLON'],
@@ -34,7 +35,7 @@
         
         $LAST_ID = $conn->lastInsertId();
         $_SESSION['ULTIMO_MAESTRO']=$LAST_ID;
-        $_SESSION['IDFINAL'] =$conn->lastInsertId();
+        
 
        /* echo "<script type='text/javascript'>
 
