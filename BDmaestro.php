@@ -35,10 +35,44 @@
         ]);
         
         $LAST_ID = $conn->lastInsertId();
-        echo "<script type='text/javascript'>
+        $_SESSION['ULTIMO_MAESTRO']=$LAST_ID;
+        $_SESSION['IDFINAL'] =$conn->lastInsertId();
+
+       /* echo "<script type='text/javascript'>
 
                 alert('$LAST_ID');
 
-</script>";
+</script>";*/
+
+
+
+
+foreach($_SESSION["cart_item"] as $item):		
+	$item_price=$item["CODIGO"];
+	$C = $item["quantity"];
+	$P= $item["PRECIO"];
+	$N= $item["NOMBRE"];
+	/*echo "<script type='text/javascript'>
+                alert('$item_price');
+			</script>";*/
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = $conn->prepare("  INSERT INTO detallefactura 
+    (IDMAESTROFAC,IDPRODUCTO,CANTIDAD,PRECIO,
+    SUBTOTAL) 
+     VALUES(:IDMAESTROFAC,
+    :IDPRODUCTO,
+    :CANTIDAD,
+    :PRECIO,
+    :SUBTOTAL);"); 
+
+$sql->execute([
+  'IDMAESTROFAC' => $LAST_ID,
+  'IDPRODUCTO' =>2,
+  'CANTIDAD' => $C,
+  'PRECIO' =>$P,
+  'SUBTOTAL' => $C*$P,	
+]);
+			
+endforeach;
 
 ?>

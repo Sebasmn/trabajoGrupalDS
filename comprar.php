@@ -197,15 +197,11 @@ if(isset($_SESSION["cart_item"])){
 }
 
 ?>
-<form
-action ="BDmaestro.php" >
-<button 
-type="submit"
-id="btnEmpty" href="#openmodal1">Comprar</button>
+<form action ="BDmaestro.php" ><button type="submit"id="btnEmpty" href="#openmodal1">Comprar</button>
+<!--<a href="#openmodal1">Comprar</a>-->
 <!-- AQUI VA EL BDMAESTRO-->
 </form>
 	<section 
-	
 	id="openmodal1">
 	<div class="content-modal1">
 	<br>	
@@ -215,11 +211,8 @@ id="btnEmpty" href="#openmodal1">Comprar</button>
 	<br>
 		<div class="buttons">
 		<br>
-		<form
-action ="BDdetalle.php" >
-<button 
-type="submit"
-id="ok" href="#openmodal">Comprar</button>
+		
+<a href="#openmodal" id="ok" >COMPRAR</a>
 <!-- AQUI VA EL BDMAESTRO-->
 </form>&nbsp;
 		<a id="ko" href="#close" >VOLVER</a>&nbsp;
@@ -238,6 +231,15 @@ id="openmodal" class="modalDialog">
             <div id="caja1"></div>
 
             <div id="caja2">
+			<?php
+			   $records = $conn->prepare("SELECT * FROM usuarios 
+			   WHERE   CEDULA = :cedula "   );
+			   $records->bindParam(':cedula', $cedGlobal);
+			   $records->execute();
+			   $results = $records->fetch(PDO::FETCH_ASSOC);
+			   $cd = $results['ID'];         
+			   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			?>
                 <div id="titulo">
                     <p>FARMACIA DS3</p>
                 </div>
@@ -258,7 +260,11 @@ id="openmodal" class="modalDialog">
 			font-size: 12px;
 			margin-left: 10%;">CORREO ELECTRONICO : <?php echo $results['email']?></P>
 				<!--<hr color="blue" size=3> -->
-			<hr color="#44A3A3">
+				<hr color="#44A3A3">
+			<br>
+			<br>
+			<br>
+			
 			<table
 			style="
 			margin-top: -10%;"
@@ -269,12 +275,12 @@ id="openmodal" class="modalDialog">
 				style="
 			font-size: 12px;
 			margin-left: 10%;"
-			field="idfactura" >NOMBRE</th>
+			field="idfactura" >CANTIDAD</th>
                 <th 
 				style="
 			font-size: 12px;
 			margin-left: 10%;"
-			field="idcliente" >CANTIDAD</th>
+			field="idcliente" >PRECIO</th>
                 <th style="
 			font-size: 12px;
 			margin-left: 10%;"
@@ -283,13 +289,24 @@ id="openmodal" class="modalDialog">
             
         </thead>
 			<?php 
-            
-            $sql = "SELECT * FROM detallefactura ";
+            $records2 = $conn->prepare("SELECT MAX(IDFACTURA) AS NOMBRE FROM maestrofactura "   );
+			$records2->execute();
+			$results2 = $records2->fetch(PDO::FETCH_ASSOC);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$idMayor=$results2['NOMBRE'] ;
+
+			$records3 = $conn->prepare("SELECT SUM(SUBTOTAL) AS SUMATOTAL FROM detallefactura WHERE IDMAESTROFAC = '$idMayor'"  );
+			$records3->execute();
+			$results3 = $records3->fetch(PDO::FETCH_ASSOC);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$totals=$results3['SUMATOTAL'] ;
+
+            $sql = "SELECT * FROM detallefactura WHERE IDMAESTROFAC = '$idMayor'";
             $result = mysqli_query($conexion1,$sql);
-            $sentencia = "SELECT COUNT(*) AS TOTAL FROM detallefactura";
+            $sentencia = "SELECT COUNT(*)FROM detallefactura";
             $conteo = mysqli_query($conexion1,$sentencia);
             $respuesta = mysqli_fetch_assoc($conteo);
-            while ($mostrar = mysqli_fetch_array($result)) {    
+            while ($mostrar1 = mysqli_fetch_array($result)) {    
         ?>
         
         <tr style="text-align: center;">
@@ -297,27 +314,31 @@ id="openmodal" class="modalDialog">
 			style="
 			font-size: 12px;
 			margin-left: 10%;"
-			> <?php echo $mostrar['IDPRODUCTO']?></td>
+			> <?php echo $mostrar1['CANTIDAD']?></td>
             <td
 			style="
 			font-size: 12px;
 			margin-left: 10%;"
-			> <?php echo $mostrar['PRECIO']?></td>
+			> <?php echo $mostrar1['PRECIO']?></td>
 			<td
 			style="
 			font-size: 12px;
 			margin-left: 10%;"
-			> <?php echo $mostrar['SUBTOTAL']?></td>
-			<br>
+			> <?php echo $mostrar1['SUBTOTAL']?></td>
+			
         </tr>
         
             <?php 
             }?>
     </table>
-			<label id="tot" style="margin-left:60%"> <p>TOTAL :</p>  </label>
+			<label id="tot" style="margin-left:71%"> TOTAL : <?php echo $totals?></label>
+			
+			
 
 
 			<br>
+
+
 
 			<hr color="#44A3A3">
 			</div>
@@ -364,14 +385,7 @@ id="openmodal" class="modalDialog">
 			type="submit" value="Agregar" class="btnAddAction" /></div>
 			</div>
 			</form>
-		</div>
-
-
-	
-				
-
-
-
+		</div>		
 	<?php
 		}
 	}
@@ -444,15 +458,11 @@ if (isset($_SESSION['user_id'])) :
 	$P = $item["PRECIO"];
 	$N = $item["NOMBRE"];	
 
- 	echo "<script type='text/javascript'>
-		alert('$item_price'+'---'+'$C'+'----'+'$P'+'------'+'$N');
-	</script>";
+ 	
 
  endforeach;
  
 ?>
-<script>
-alert(document.getElementById("direccionLAT").value);
-</script>
+
 
 </html>
