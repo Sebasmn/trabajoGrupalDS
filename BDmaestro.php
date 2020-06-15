@@ -1,6 +1,14 @@
     <?php 	
+
+echo "<script type='text/javascript'>
+
+alert('SIIII');
+
+</script>";
+
      require 'conexion.php'; 
      session_start();
+     //NO TE OLVIDARAS LA DIREC
      if (isset($_SESSION['CED_CLIENTE'])) :
          $cedGlobal = $_SESSION['CED_CLIENTE'];
          echo "<script type='text/javascript'>

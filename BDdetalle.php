@@ -1,4 +1,10 @@
 <?php
+
+echo "<script type='text/javascript'>
+
+alert('SIIII');
+
+</script>";
  require 'conexion.php'; 
  session_start();
 $records2 = $conn->prepare("SELECT MAX(IDFACTURA) AS NOMBRE FROM maestrofactura "   );

@@ -197,9 +197,13 @@ if(isset($_SESSION["cart_item"])){
 }
 
 ?>
-
-<a id="btnEmpty" href="#openmodal1">Comprar</a>
+<form
+action ="BDmaestro.php" >
+<button 
+type="submit"
+id="btnEmpty" href="#openmodal1">Comprar</button>
 <!-- AQUI VA EL BDMAESTRO-->
+</form>
 	<section 
 	
 	id="openmodal1">
@@ -211,10 +215,13 @@ if(isset($_SESSION["cart_item"])){
 	<br>
 		<div class="buttons">
 		<br>
-		<a id="ok" href="#openmodal" >COMPRAR
-		<!-- AQUI VA EL BDDETALLE-->
-		
-		</a>&nbsp;
+		<form
+action ="BDdetalle.php" >
+<button 
+type="submit"
+id="ok" href="#openmodal">Comprar</button>
+<!-- AQUI VA EL BDMAESTRO-->
+</form>&nbsp;
 		<a id="ko" href="#close" >VOLVER</a>&nbsp;
 			
 		</div>
