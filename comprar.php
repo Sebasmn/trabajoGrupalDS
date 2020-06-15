@@ -333,11 +333,7 @@ id="openmodal" class="modalDialog">
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$totals=$results3['SUMATOTAL'] ;
 
-<<<<<<< HEAD
             $sql = "SELECT * FROM detallefactura WHERE IDMAESTROFAC = '$FINAL'    ";
-=======
-            $sql = "SELECT * FROM detallefactura WHERE IDMAESTROFAC = '$aqw'";
->>>>>>> 5461e0887af0c5032f49a53eeb9882f2570ccf04
             $result = mysqli_query($conexion1,$sql);
             $sentencia = "SELECT COUNT(*)FROM detallefactura";
             $conteo = mysqli_query($conexion1,$sentencia);
