@@ -405,7 +405,7 @@ id="openmodal" class="modalDialog">
             
             
 		 </section>
-		 <a href="crearPdf.php" class="guardar"> GUARDAR  PDF</a>
+		 
 				</div>
 		</section>
 </div>
